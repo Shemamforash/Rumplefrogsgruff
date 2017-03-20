@@ -460,8 +460,9 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
-  cloudProjectId: 6ccc89a3-57b2-467b-9238-b05ce9603267
-  projectName: Rumplefrogsgruff (1)
+  cloudServicesEnabled:
+    UNet: 1
+  cloudProjectId: 602f4f34-d317-4bdb-9dd3-054f5c6bd726
+  projectName: Rumplefrogsgruff (2)
   organizationId: shemamforash
   cloudEnabled: 0
