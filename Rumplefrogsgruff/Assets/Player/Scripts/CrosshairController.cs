@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CrosshairController : MonoBehaviour {
-
+	private List<Question> questions;
 	public Animator cursorAnimator;
 	int layerMask;
 
 	void Start(){
 		//Objects - will probably replace later
+		questions = FileReader.Read();
 		layerMask = 1 << 9;
 	}
 		

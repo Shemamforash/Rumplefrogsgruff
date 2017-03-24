@@ -1,44 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Question {
 
-	public enum Items { KNIFE, AXE, PEN, PAINTING, BOOKS };
+	public enum Items { KNIFE, AXE, PEN, PAINTING, BOOKS, DESK, LOGS, CHAIR };
 	private string text;
-	private Dictionary<int, string> subject_response;
-	private List<Question> blocks;
+	private Dictionary<Items, string> subject_response;
+	//Can't keep a list of Question objects easily, so just look up on Question ids instead
+	private List<int> blocks;
+	private int id;
 
-	public Question(string text, List<Question> blocks = null){
-		subject_response = new Dictionary<int, string>();
-		if (blocks == null) {
-			blocks = new List<Question> ();
-		}
-		this.text = text;
+	public static Question.Items NameToEnum(string name){
+		return (Items)Enum.Parse(typeof(Items), name);
 	}
 
-	public void addResponse(int item, string response){
+	public Question(int id, string text, Dictionary<Items, string> subject_response, List<int> blocks){
+		this.subject_response = subject_response;
+		this.id = id;
+		this.text = text;
+		this.blocks = blocks;
+	}
+
+	public void addResponse(Items item, string response){
 		subject_response.Add (item, response);
 	}
 
-	public bool removeResponse(int item){
-		if(subject_response.ContainsKey (item)){
-			subject_response.Remove (item);
-			return true;
-		}else{
-			return false;
-		}
+	public bool removeResponse(Items item){
+		return subject_response.Remove (item);
 	}
 
-	public string getResponse(int item){
+	public string getResponse(Items item){
 		return subject_response [item];
 	}
 
-	public void addBlock(Question toBlock){
-		blocks.Add (toBlock);
+	public void addBlock(int toBlockId){
+		blocks.Add (toBlockId);
 	}
 
-	public bool doesBlock(Question q){
-		return blocks.Contains (q);
+	public bool doesBlock(int qid){
+		return blocks.Contains (qid);
+	}
+
+	public int getId(){
+		return id;
+	}
+
+	public string getText(){
+		return text;
 	}
 }

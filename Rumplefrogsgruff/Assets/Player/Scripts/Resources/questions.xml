@@ -1,0 +1,22 @@
+<Questions>
+    <Question>
+        <ID>0</ID>
+        <Text>Why is the axe sad?</Text>
+        <Responses>
+            <Response>
+                <Subject>AXE</Subject>
+                <Text>Go Away</Text>
+            </Response>
+            <Response>
+                <Subject>PEN</Subject>
+                <Text>Go Away</Text>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion>1</BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>1</ID>
+    </Question>
+</Questions>
