@@ -4,32 +4,32 @@
         <Text>What happened here?</Text>
         <Responses>
             <Response>
-                <Subject>Knife</Subject>
+                <Subject>KNIFE</Subject>
                 <Text>The man who lived here, he went mad, smashed his chair, and left.</Text>
                 <OpenQuestion>1,2,5</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Candle</Subject>
+                <Subject>CANDLE</Subject>
                 <Text>I don't remember what he looked like. He was tall. I remember a chair.</Text>
                 <OpenQuestion>1</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Pen</Subject>
+                <Subject>PEN</Subject>
                 <Text>There was anger, lots of shouting, and the howling and breaking.</Text>
                 <OpenQuestion>2</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Desk</Subject>
+                <Subject>DESK</Subject>
                 <Text>If only everything had been left as it was, my love wouldn't be in pieces!</Text>
                 <OpenQuestion>3</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Axe</Subject>
+                <Subject>AXE</Subject>
                 <Text>Can't you leave me alone? I've already suffered enough!</Text>
                 <OpenQuestion>4</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Logs</Subject>
+                <Subject>LOGS</Subject>
                 <Text>He broke it, can't you see!? He broke it and now he's left us all!</Text>
                 <OpenQuestion>3,5</OpenQuestion>
             </Response>
@@ -43,33 +43,33 @@
         <Text>Do you know why he would destroy a chair?</Text>
         <Responses>
             <Response>
-                <Subject>Knife</Subject>
+                <Subject>KNIFE</Subject>
                 <Text>I remember it was important to him. I think I made the chair? Was he mad at me?</Text>
                 <OpenQuestion>2</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Candle</Subject>
-                <Text>I really don't. I couldn't see what happened, but I wouldn't remember anyway.</Text>
+                <Subject>CANDLE</Subject>
+                <Text>I really don't. I couldn't see what hapPENed, but I wouldn't remember anyway.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Pen</Subject>
+                <Subject>PEN</Subject>
                 <Text>Well, the chair was a gift, but it made him sad. Then his sadness turned to rage.</Text>
                 <OpenQuestion>7,2</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Desk</Subject>
+                <Subject>DESK</Subject>
                 <Text>I wish I knew! My poor chair. He made that chair for me you know!</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Axe</Subject>
+                <Subject>AXE</Subject>
                 <Text>Just leave me be, why would you torment me with these questions?</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Logs</Subject>
-                <Text>It doesn't matter! He chopped the chair, not us logs, he chopped it and we are saved!</Text>
+                <Subject>LOGS</Subject>
+                <Text>It doesn't matter! He chopped the chair, not us LOGS, he chopped it and we are saved!</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
         </Responses>
@@ -82,32 +82,32 @@
         <Text>I don't understand why a chair would anger someone.</Text>
         <Responses>
             <Response>
-                <Subject>Knife</Subject>
+                <Subject>KNIFE</Subject>
                 <Text>He never used to be angry, he used to be happy. We would carve, hunt, and cook together.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Candle</Subject>
+                <Subject>CANDLE</Subject>
                 <Text>I remember seeing two people here. One on the chair. Then it was just one person. Maybe they did something to the chair.</Text>
                 <OpenQuestion>6</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Pen</Subject>
+                <Subject>PEN</Subject>
                 <Text>It's been quiet for so long... once there was a woman's voice, but it was so gentle it could never have angered him.</Text>
                 <OpenQuestion>6</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Desk</Subject>
+                <Subject>DESK</Subject>
                 <Text>Why does it even matter. He took my beloved, so selfish of him, so cruel.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Axe</Subject>
+                <Subject>AXE</Subject>
                 <Text>He used to chop wood, but that wasn't with anger. Then he made me break it, and now I have to live with myself.</Text>
                 <OpenQuestion>1</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Logs</Subject>
+                <Subject>LOGS</Subject>
                 <Text>We don't either! But he's gone and he took his chopping and his tears and his woman away.</Text>
                 <OpenQuestion>5,6</OpenQuestion>
             </Response>
@@ -121,12 +121,12 @@
         <Text>What did he break?</Text>
         <Responses>
             <Response>
-                <Subject>Desk</Subject>
+                <Subject>DESK</Subject>
                 <Text>Can't you see my chair in ruins? He was so beautiful, and so elegant, he was taken from me only a year ago.</Text>
                 <OpenQuestion>1</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Logs</Subject>
+                <Subject>LOGS</Subject>
                 <Text>The chair, the stupid, ugly chair.</Text>
                 <OpenQuestion>1</OpenQuestion>
             </Response>
@@ -140,8 +140,8 @@
         <Text>I'm sorry you are suffering. Please tell me why, perhaps I can do something.</Text>
         <Responses>
             <Response>
-                <Subject>Axe</Subject>
-                <Text>It was special, the chair. He made me break it apart. My friends- they judge me for it. And the logs, they love it.</Text>
+                <Subject>AXE</Subject>
+                <Text>It was special, the chair. He made me break it apart. My friends- they judge me for it. And the LOGS, they love it.</Text>
                 <OpenQuestion>1,8</OpenQuestion>
             </Response>
         </Responses>
@@ -154,27 +154,27 @@
         <Text>Do you know why he left in such a hurry?</Text>
         <Responses>
             <Response>
-                <Subject>Knife</Subject>
+                <Subject>KNIFE</Subject>
                 <Text>The woman made him leave. We used to hunt together but she didn't like it.</Text>
                 <OpenQuestion>6</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Candle</Subject>
+                <Subject>CANDLE</Subject>
                 <Text>It was the woman! I remember seeing her, she came, and then she left, and he followed her.</Text>
                 <OpenQuestion>6</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Pen</Subject>
+                <Subject>PEN</Subject>
                 <Text>The chair would remember, he had such good memory. But I remember he was inconsolable after she left.</Text>
                 <OpenQuestion>6</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Desk</Subject>
+                <Subject>DESK</Subject>
                 <Text>Oh I don't know, really. My beloved used to talk about him all the time. If only he were still here he could tell you.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Axe</Subject>
+                <Subject>AXE</Subject>
                 <Text>He wanted a child.</Text>
                 <OpenQuestion>6</OpenQuestion>
             </Response>
@@ -188,27 +188,27 @@
         <Text>You keep talking about a woman, who is she?</Text>
         <Responses>
             <Response>
-                <Subject>Knife</Subject>
+                <Subject>KNIFE</Subject>
                 <Text>She must have been special to him, the chair we made was for her.</Text>
                 <OpenQuestion>7</OpenQuestion>
             </Response>
             <Response>
-                <Subject>Candle</Subject>
+                <Subject>CANDLE</Subject>
                 <Text>They were together for a long time. But I've forgotten her face.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Pen</Subject>
+                <Subject>PEN</Subject>
                 <Text>He was her husband! I remember writing letters to her now, it was when they were courting. She moved here to be with him.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Desk</Subject>
+                <Subject>DESK</Subject>
                 <Text>She was good, and kind.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Axe</Subject>
+                <Subject>AXE</Subject>
                 <Text>Please don't make me remember, it's too painful.</Text>
                 <OpenQuestion>8</OpenQuestion>
             </Response>
@@ -222,17 +222,17 @@
         <Text>If the chair was a gift, what was it for?</Text>
         <Responses>
             <Response>
-                <Subject>Knife</Subject>
+                <Subject>KNIFE</Subject>
                 <Text>He said she was beautiful, he wanted to make something beautiful for her. Her face was so full of joy when she saw it.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Candle</Subject>
+                <Subject>CANDLE</Subject>
                 <Text>I'm not sure, everything is muddled in my mind. I'm so sorry.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
-                <Subject>Pen</Subject>
+                <Subject>PEN</Subject>
                 <Text>It was for their wedding. He made it to celebrate her, but it wasn't just for her. It was for a child too.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
@@ -246,23 +246,25 @@
         <Text>I need to know, please, maybe I can help you- if you'll let me.</Text>
         <Responses>
             <Response>
-                <Subject>Axe</Subject>
-                <Text>Take the logs away from me, burn them. I can't forget what happened, but I don't need to be reminded of it at every moment.</Text>
+                <Subject>AXE</Subject>
+                <Text>Take the LOGS away from me, burn them. I can't forget what hapPENed, but I don't need to be reminded of it at every moment.</Text>
             </Response>
+        </Responses>
         <BlockedQuestions>
             <BlockedQuestion></BlockedQuestion>
         </BlockedQuestions>
     </Question>
     <Question>
         <ID>9</ID>
-        <Text>There, it's done. They won't bother you any more, will you tell me what happened here now?</Text>
+        <Text>There, it's done. They won't bother you any more, will you tell me what hapPENed here now?</Text>
         <Responses>
             <Response>
-                <Subject>Axe</Subject>
+                <Subject>AXE</Subject>
                 <Text>Yes, the chair was for his wife and child. First he lost her, then he lost his son, it was so terrible. Wait, I can hear him coming, ask him!</Text>
             </Response>
-        <BlockedQuestions>
-            <BlockedQuestion></BlockedQuestion>
-        </BlockedQuestions>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
     </Question>
 </Questions>

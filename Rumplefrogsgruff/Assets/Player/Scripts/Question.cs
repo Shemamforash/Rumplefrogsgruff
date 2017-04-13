@@ -5,22 +5,23 @@ using System;
 
 public class Question {
 
-	public enum Items { KNIFE, AXE, PEN, PAINTING, BOOKS, DESK, LOGS, CHAIR };
+	public enum Items { KNIFE, AXE, PEN, DESK, LOGS, CANDLE };
 	private string text;
 	private Dictionary<Items, string> subject_response;
 	//Can't keep a list of Question objects easily, so just look up on Question ids instead
-	private List<int> blocks;
+	private List<int> blocks, opens;
 	private int id;
 
 	public static Question.Items NameToEnum(string name){
 		return (Items)Enum.Parse(typeof(Items), name);
 	}
 
-	public Question(int id, string text, Dictionary<Items, string> subject_response, List<int> blocks){
+	public Question(int id, string text, Dictionary<Items, string> subject_response, List<int> blocks, List<int> opens){
 		this.subject_response = subject_response;
 		this.id = id;
 		this.text = text;
 		this.blocks = blocks;
+		this.opens = opens;
 	}
 
 	public void addResponse(Items item, string response){
