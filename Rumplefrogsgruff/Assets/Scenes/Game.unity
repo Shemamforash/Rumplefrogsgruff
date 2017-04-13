@@ -1073,7 +1073,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
+      propertyPath: m_Name
+      value: Logs
+      objectReference: {fileID: 0}
+    - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
@@ -1160,7 +1168,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 199726, guid: 1ab5400ebeac41e49913771d6367ae83, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 199726, guid: 1ab5400ebeac41e49913771d6367ae83, type: 2}
+      propertyPath: m_Name
+      value: Axe
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9582090, guid: 1ab5400ebeac41e49913771d6367ae83, type: 2}
@@ -1555,7 +1567,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_Name
+      value: Logs
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
@@ -2290,9 +2310,9 @@ GameObject:
   - component: {fileID: 952683988}
   - component: {fileID: 952683987}
   - component: {fileID: 952683986}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3094,6 +3114,50 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 193672, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 151878, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 130962, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 175038, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 127552, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 111120, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 143678, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 197166, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 184154, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 181850, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 170080, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
   m_IsPrefabParent: 0
@@ -3149,7 +3213,7 @@ MonoBehaviour:
   can_pick_up: 1
   environment_layer:
     serializedVersion: 2
-    m_Bits: 4294965247
+    m_Bits: 4294965243
 --- !u!1 &1147895206 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1566007752383362, guid: b50479b85d149c2488fca1402c5d8d56,
@@ -3401,7 +3465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Name
-      value: Wood-5tier log_i (3)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 54216643604193718, guid: 73cfce260b33f5f418567b28383d38be,
         type: 2}
@@ -3420,7 +3484,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
@@ -3997,7 +4065,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Name
-      value: Wood-5tier log_i (1)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 54216643604193718, guid: 73cfce260b33f5f418567b28383d38be,
         type: 2}
@@ -4016,7 +4084,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
@@ -4334,7 +4406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Name
-      value: Wood-5tier log_i (5)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 54216643604193718, guid: 73cfce260b33f5f418567b28383d38be,
         type: 2}
@@ -4353,7 +4425,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
@@ -4756,8 +4832,8 @@ GameObject:
   - component: {fileID: 1467057827}
   - component: {fileID: 1467057830}
   - component: {fileID: 1467057826}
-  m_Layer: 10
-  m_Name: Axe-wildlife_collared M_n
+  m_Layer: 12
+  m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5005,6 +5081,14 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 176396, guid: 1db77d336845abc4f9bb5a3c06024561, type: 2}
+      propertyPath: m_Name
+      value: Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 176396, guid: 1db77d336845abc4f9bb5a3c06024561, type: 2}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1db77d336845abc4f9bb5a3c06024561, type: 2}
   m_IsPrefabParent: 0
@@ -5176,7 +5260,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Name
-      value: Wood-5tier log_i (4)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 54216643604193718, guid: 73cfce260b33f5f418567b28383d38be,
         type: 2}
@@ -5195,7 +5279,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
@@ -5401,7 +5489,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
       propertyPath: m_Name
-      value: Wood-log slice_i (1)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 453406, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5418,7 +5506,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
@@ -5484,7 +5576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
       propertyPath: m_Name
-      value: Wood-log slice_i (2)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 64248838285820882, guid: a8a9c288d363d8f4795ba03974ac73a6,
         type: 2}
@@ -5493,7 +5585,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 189012, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a9c288d363d8f4795ba03974ac73a6, type: 2}
@@ -5626,7 +5722,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Name
-      value: Wood-5tier log_i (2)
+      value: Logs
       objectReference: {fileID: 0}
     - target: {fileID: 54216643604193718, guid: 73cfce260b33f5f418567b28383d38be,
         type: 2}
@@ -5650,7 +5746,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 171960, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73cfce260b33f5f418567b28383d38be, type: 2}
@@ -5793,6 +5893,10 @@ Transform:
   m_PrefabParentObject: {fileID: 4568260420906790, guid: 2cebbe72b3420fb47b0861343e1b0a46,
     type: 2}
   m_PrefabInternal: {fileID: 1721424581}
+--- !u!1 &1727949167 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 193672, guid: 1b6f5d3a81a4c8345a49046252843fa9, type: 2}
+  m_PrefabInternal: {fileID: 1138081041}
 --- !u!1 &1748340513 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1670398935637848, guid: b50479b85d149c2488fca1402c5d8d56,
@@ -6033,7 +6137,8 @@ GameObject:
   - component: {fileID: 1877764187}
   - component: {fileID: 1877764186}
   - component: {fileID: 1877764185}
-  m_Layer: 8
+  - component: {fileID: 1877764189}
+  m_Layer: 2
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -6067,6 +6172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorAnimator: {fileID: 1487043858}
+  player_mask:
+    serializedVersion: 2
+    m_Bits: 4294967291
 --- !u!124 &1877764186
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6118,6 +6226,23 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &1877764189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877764183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa64640d1c1b40948af47ee79c910256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife: {fileID: 1105564123}
+  axe: {fileID: 1467057825}
+  desk: {fileID: 1727949167}
+  logs: {fileID: 1229407970}
+  candle: {fileID: 0}
+  pen: {fileID: 0}
 --- !u!1 &1886208151 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1092550706028098, guid: b50479b85d149c2488fca1402c5d8d56,
@@ -6225,7 +6350,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 143272, guid: 933f9cbc3154f11469097c35cecf05d6, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 143272, guid: 933f9cbc3154f11469097c35cecf05d6, type: 2}
+      propertyPath: m_Name
+      value: Logs
+      objectReference: {fileID: 0}
+    - target: {fileID: 143272, guid: 933f9cbc3154f11469097c35cecf05d6, type: 2}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 933f9cbc3154f11469097c35cecf05d6, type: 2}

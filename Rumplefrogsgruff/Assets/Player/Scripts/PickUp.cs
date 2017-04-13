@@ -7,7 +7,7 @@ public class PickUp : MonoBehaviour
     public bool can_pick_up = false;
     private bool is_picked_up = false;
     private GameObject player;
-    private float distance_from_player = 30f;
+    private float distance_from_player = 15f;
     public LayerMask environment_layer;
     private RaycastHit hit;
 
@@ -21,7 +21,6 @@ public class PickUp : MonoBehaviour
     {
         if (Input.GetKeyUp("f"))
         {
-            Debug.Log(is_picked_up);
             if (is_picked_up)
             {
                 is_picked_up = false;
@@ -30,6 +29,7 @@ public class PickUp : MonoBehaviour
             else
             {
                 Vector3 player_look_dir = player.transform.forward;
+                Debug.DrawRay(player.transform.position, player_look_dir * distance_from_player * 2, Color.red, 2f);
                 if (Physics.Raycast(player.transform.position, player_look_dir, out hit, distance_from_player * 2))
                 {
                     if (hit.collider.gameObject.tag == "Interactive")
@@ -44,11 +44,10 @@ public class PickUp : MonoBehaviour
         {
             Vector3 player_look_dir = player.transform.forward;
             Vector3 new_pos;
-			float held_distance = distance_from_player / 2.5f;
-			Debug.DrawRay(player.transform.position, player_look_dir * held_distance, Color.green, 2f);
+            float held_distance = distance_from_player / 2.5f;
             if (Physics.Raycast(player.transform.position, player_look_dir, out hit, held_distance, environment_layer))
             {
-				Debug.Log(hit.collider.name);
+                Debug.Log(hit.collider.name);
                 new_pos = player.transform.position + player.transform.forward * hit.distance;
             }
             else

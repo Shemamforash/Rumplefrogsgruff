@@ -248,6 +248,7 @@
             <Response>
                 <Subject>AXE</Subject>
                 <Text>Take the LOGS away from me, burn them. I can't forget what hapPENed, but I don't need to be reminded of it at every moment.</Text>
+                <OpenQuestion></OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -261,6 +262,7 @@
             <Response>
                 <Subject>AXE</Subject>
                 <Text>Yes, the chair was for his wife and child. First he lost her, then he lost his son, it was so terrible. Wait, I can hear him coming, ask him!</Text>
+                <OpenQuestion></OpenQuestion>
             </Response>
             <BlockedQuestions>
                 <BlockedQuestion></BlockedQuestion>
