@@ -5,16 +5,25 @@ using UnityEngine.UI;
 
 public class CrosshairController : MonoBehaviour
 {
+    /*
+    README --- Controls
+    e to interact with objects
+    q to exit dialogue
+    1-5 for dialogue choices
+     */
+
     public Animator cursorAnimator;
-    private bool can_interact_with_object = false;
+    private bool dialogue_box_open = false, nothing_to_say = false;
     private GameObject interactible_object = null;
     public LayerMask player_mask;
-    private GameObject dialogue_background;
+    private GameObject dialogue_background, speaker_text, response_container;
     private List<GameObject> dialogue_options = new List<GameObject>();
-    private GameObject speaker_text;
-    private bool dialogue_box_open = false, responded = false;
     private List<Question> current_questions;
-    private GameObject response_container;
+    private float max_distance_to_interact = 50f;
+
+
+    private enum State { ASKING, LISTENING, NONE };
+    private State current_state = State.NONE;
 
     void Start()
     {
@@ -34,46 +43,41 @@ public class CrosshairController : MonoBehaviour
         current_questions = QuestionController.GetQuestions(interactible_object);
         response_container.SetActive(false);
         dialogue_background.SetActive(true);
-        for (int i = 0; i < dialogue_options.Count; ++i)
+
+        if (current_questions.Count == 0)
         {
-            if (i < current_questions.Count)
-            {
-                dialogue_options[i].SetActive(true);
-                dialogue_options[i].transform.Find("Text").GetComponent<Text>().text = "(" + (i + 1) + ")  " + current_questions[i].getText();
-            }
-            else
-            {
-                dialogue_options[i].SetActive(false);
-            }
+            current_state = State.LISTENING;
+            nothing_to_say = true;
         }
-        dialogue_box_open = true;
-        responded = false;
+        else
+        {
+            for (int i = 0; i < dialogue_options.Count; ++i)
+            {
+                if (i < current_questions.Count)
+                {
+                    dialogue_options[i].SetActive(true);
+                    dialogue_options[i].transform.Find("Text").GetComponent<Text>().text = "(" + (i + 1) + ")  " + current_questions[i].getText();
+                }
+                else
+                {
+                    dialogue_options[i].SetActive(false);
+                }
+            }
+            dialogue_box_open = true;
+        }
     }
 
-    void Update()
+    private void RayCastInFront()
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, player_mask))
+        Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, player_mask);
+        if (hit.collider != null && hit.collider.gameObject.tag == "NPC")
         {
-            if (hit.collider.gameObject.tag == "NPC")
+            cursorAnimator.SetBool("canIdentifyObject", true);
+            if (Input.GetKeyDown("e"))
             {
-                cursorAnimator.SetBool("canIdentifyObject", true);
-                if (Input.GetKeyDown("e"))
-                {
-                    interactible_object = hit.collider.gameObject;
-                }
-            }
-            else
-            {
-                cursorAnimator.SetBool("canIdentifyObject", false);
-                if (Input.GetKeyDown("e"))
-                {
-                    interactible_object = null;
-                    dialogue_box_open = false;
-                    responded = false;
-                    dialogue_background.SetActive(false);
-                }
+                interactible_object = hit.collider.gameObject;
+                current_state = State.ASKING;
             }
         }
         else
@@ -83,54 +87,91 @@ public class CrosshairController : MonoBehaviour
             {
                 interactible_object = null;
                 dialogue_box_open = false;
-                responded = false;
                 dialogue_background.SetActive(false);
+                current_state = State.NONE;
             }
         }
-        if ((!dialogue_box_open && interactible_object != null) || (responded && Input.GetKeyDown("1")))
+    }
+
+    private void GetQuestionChoice()
+    {
+        int input_num = -1;
+        if (Input.GetKeyDown("1"))
         {
-            GetNewQuestions();
+            input_num = 1;
         }
-        else if (dialogue_box_open)
+        else if (Input.GetKeyDown("2"))
         {
-            int input_num = -1;
+            input_num = 2;
+        }
+        else if (Input.GetKeyDown("3"))
+        {
+            input_num = 3;
+        }
+        else if (Input.GetKeyDown("4"))
+        {
+            input_num = 4;
+        }
+        else if (Input.GetKeyDown("5"))
+        {
+            input_num = 5;
+        }
+        if (input_num > -1 && current_questions.Count >= input_num)
+        {
+            string response = QuestionController.GetResponse(interactible_object, current_questions[input_num - 1]);
+            foreach (GameObject dialogue_option in dialogue_options)
+            {
+                dialogue_option.SetActive(false);
+            }
+            response_container.SetActive(true);
+            GameObject.Find("Reply Text").GetComponent<Text>().text = response;
+            current_state = State.LISTENING;
+        }
+    }
+
+    private void CloseDialogue(bool close)
+    {
+        if (Input.GetKeyDown("q") || close || (interactible_object != null && Vector3.Distance(transform.position, interactible_object.transform.position) > max_distance_to_interact))
+        {
+            current_questions = null;
+            dialogue_box_open = false;
+            dialogue_background.SetActive(false);
+            current_state = State.NONE;
+        }
+    }
+
+    void Update()
+    {
+        if (current_state == State.NONE)
+        {
+            RayCastInFront();
+        }
+        else if (current_state == State.ASKING)
+        {
+            if (!dialogue_box_open)
+            {
+                GetNewQuestions();
+            }
+            else
+            {
+                GetQuestionChoice();
+            }
+        }
+        else if (current_state == State.LISTENING)
+        {
             if (Input.GetKeyDown("1"))
             {
-                input_num = 1;
-            }
-            else if (Input.GetKeyDown("2"))
-            {
-                input_num = 2;
-            }
-            else if (Input.GetKeyDown("3"))
-            {
-                input_num = 3;
-            }
-            else if (Input.GetKeyDown("4"))
-            {
-                input_num = 4;
-            }
-            else if (Input.GetKeyDown("5"))
-            {
-                input_num = 5;
-            }
-            else if (Input.GetKeyDown("q"))
-            {
-                current_questions = null;
-                dialogue_box_open = false;
-                dialogue_background.SetActive(false);
-            }
-            if (input_num > -1 && current_questions.Count >= input_num)
-            {
-                string response = QuestionController.GetResponse(interactible_object, current_questions[input_num - 1]);
-                foreach (GameObject dialogue_option in dialogue_options)
+                if (nothing_to_say)
                 {
-                    dialogue_option.SetActive(false);
+                    CloseDialogue(true);
                 }
-                response_container.SetActive(true);
-                GameObject.Find("Reply Text").GetComponent<Text>().text = response;
-                responded = true;
+                else
+                {
+                    current_state = State.ASKING;
+                    GetNewQuestions();
+                }
             }
         }
+        CloseDialogue(false);
     }
 }
