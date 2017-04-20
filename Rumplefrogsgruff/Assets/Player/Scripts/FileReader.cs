@@ -17,11 +17,11 @@ public static class FileReader
             int id = int.Parse(node.SelectSingleNode("ID").InnerText);
             string text = node.SelectSingleNode("Text").InnerText;
             XmlNodeList responses = node.SelectNodes("Responses/Response");
-            Dictionary<Question.Items, Question.Response> response_dictionary = new Dictionary<Question.Items, Question.Response>();
+            Dictionary<Question.Item, Question.Response> response_dictionary = new Dictionary<Question.Item, Question.Response>();
             foreach (XmlNode response_node in responses)
             {
                 string subject = response_node.SelectSingleNode("Subject").InnerText;
-                Question.Items subject_enum = Question.NameToEnum(subject);
+                Question.Item subject_enum = Question.NameToEnum(subject);
                 string response_text = response_node.SelectSingleNode("Text").InnerText;
                 string[] open_questions = response_node.SelectSingleNode("OpenQuestion").InnerText.Split(',');
                 List<int> open_list = new List<int>();

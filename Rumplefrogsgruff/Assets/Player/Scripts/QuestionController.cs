@@ -26,7 +26,7 @@ public class QuestionController : MonoBehaviour
     public static List<Question> GetQuestions(GameObject g)
     {
         List<Question> question_arr = new List<Question>();
-        Question.Items item = GameObjectToItem(g);
+        Question.Item item = GameObjectToItem(g);
         foreach (Question q in available_questions)
         {	
             string response = q.getResponse(item);
@@ -40,31 +40,31 @@ public class QuestionController : MonoBehaviour
 
     public static string GetResponse(GameObject g, Question q)
     {
-        Question.Items item = GameObjectToItem(g);
+        Question.Item item = GameObjectToItem(g);
 		foreach(int i in q.GetOpens(item)){
 			OpenQuestion(i);
 		}
 		return q.getResponse(item);
     }
 
-    private static Question.Items GameObjectToItem(GameObject g)
+    private static Question.Item GameObjectToItem(GameObject g)
     {
         switch (g.transform.root.name)
         {
             case "Knife":
-                return Question.Items.KNIFE;
+                return Question.Item.KNIFE;
             case "Axe":
-                return Question.Items.AXE;
+                return Question.Item.AXE;
             case "Desk":
-                return Question.Items.DESK;
+                return Question.Item.DESK;
             case "Logs":
-                return Question.Items.LOGS;
+                return Question.Item.LOGS;
             case "Candle":
-                return Question.Items.CANDLE;
+                return Question.Item.CANDLE;
             case "Pen":
-                return Question.Items.PEN;
+                return Question.Item.PEN;
             default:
-                return Question.Items.NONE;
+                return Question.Item.NONE;
         }
     }
 }

@@ -6,16 +6,17 @@ using System;
 public class Question
 {
 
-    public enum Items { KNIFE, AXE, PEN, DESK, LOGS, CANDLE, NONE };
+    public enum Item { KNIFE, AXE, PEN, DESK, LOGS, CANDLE, NONE };
     private string text;
-    private Dictionary<Items, Response> subject_response;
+    private Dictionary<Item, Response> subject_response;
     //Can't keep a list of Question objects easily, so just look up on Question ids instead
     private List<int> blocks;
     private int id;
+    private List<Item> items_seen = new List<Item>();
 
-    public static Question.Items NameToEnum(string name)
+    public static Question.Item NameToEnum(string name)
     {
-        return (Items)Enum.Parse(typeof(Items), name);
+        return (Item)Enum.Parse(typeof(Item), name);
     }
 
     public class Response
@@ -29,7 +30,7 @@ public class Question
         }
     }
 
-    public Question(int id, string text, Dictionary<Items, Response> subject_response, List<int> blocks)
+    public Question(int id, string text, Dictionary<Item, Response> subject_response, List<int> blocks)
     {
         this.subject_response = subject_response;
         this.id = id;
@@ -37,12 +38,12 @@ public class Question
         this.blocks = blocks;
     }
 
-    public List<int> GetOpens(Items item)
+    public List<int> GetOpens(Item item)
     {
         return subject_response[item].opens;
     }
 
-    public string getResponse(Items item)
+    public string getResponse(Item item)
     {
         string response = "";
         Response response_object = null;
