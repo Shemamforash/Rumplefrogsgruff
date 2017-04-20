@@ -17,18 +17,22 @@ public class CrosshairController : MonoBehaviour
     private GameObject interactible_object = null;
     public LayerMask player_mask;
     private GameObject dialogue_background, speaker_text, response_container;
+    private Image fade_background;
     private List<GameObject> dialogue_options = new List<GameObject>();
     private List<Question> current_questions;
-    private float max_distance_to_interact = 50f;
+    private float max_distance_to_interact = 50f, fade_time = 3f, current_fade_amount = 0f;
 
 
     private enum State { ASKING, LISTENING, NONE };
+    private enum Fade { OUT, IN, NONE };
     private State current_state = State.NONE;
+    private Fade current_fade = Fade.OUT;
 
     void Start()
     {
         dialogue_background = GameObject.Find("Dialogue Background");
         response_container = GameObject.Find("Response Container");
+        fade_background = GameObject.Find("Background Fade").GetComponent<Image>();
         for (int i = 1; i <= 5; ++i)
         {
             dialogue_options.Add(GameObject.Find("Option " + i));
@@ -147,6 +151,27 @@ public class CrosshairController : MonoBehaviour
         }
     }
 
+    private void UpdateFade()
+    {
+        if (current_fade != Fade.NONE)
+        {
+            current_fade_amount += Time.deltaTime;
+            if (fade_time <= current_fade_amount)
+            {
+                current_fade = Fade.NONE;
+                current_fade_amount = 0;
+            }
+            if (current_fade == Fade.IN)
+            {
+                fade_background.color = new Color(0, 0, 0, current_fade_amount);
+            }
+            else if (current_fade == Fade.OUT)
+            {
+                fade_background.color = new Color(0, 0, 0, 1 - current_fade_amount);
+            }
+        }
+    }
+
     void Update()
     {
         if (current_state == State.NONE)
@@ -180,5 +205,6 @@ public class CrosshairController : MonoBehaviour
             }
         }
         CloseDialogue(false);
+        UpdateFade();
     }
 }
