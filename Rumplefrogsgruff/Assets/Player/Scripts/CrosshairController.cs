@@ -48,6 +48,7 @@ public class CrosshairController : MonoBehaviour
         {
             current_state = State.LISTENING;
             nothing_to_say = true;
+            EnableResponse(interactible_object.name + " has nothing else to say.");
         }
         else
         {
@@ -119,14 +120,19 @@ public class CrosshairController : MonoBehaviour
         if (input_num > -1 && current_questions.Count >= input_num)
         {
             string response = QuestionController.GetResponse(interactible_object, current_questions[input_num - 1]);
-            foreach (GameObject dialogue_option in dialogue_options)
-            {
-                dialogue_option.SetActive(false);
-            }
-            response_container.SetActive(true);
-            GameObject.Find("Reply Text").GetComponent<Text>().text = response;
-            current_state = State.LISTENING;
+            EnableResponse(response);
         }
+    }
+
+    private void EnableResponse(string response)
+    {
+        foreach (GameObject dialogue_option in dialogue_options)
+        {
+            dialogue_option.SetActive(false);
+        }
+        response_container.SetActive(true);
+        GameObject.Find("Reply Text").GetComponent<Text>().text = response;
+        current_state = State.LISTENING;
     }
 
     private void CloseDialogue(bool close)
@@ -137,6 +143,7 @@ public class CrosshairController : MonoBehaviour
             dialogue_box_open = false;
             dialogue_background.SetActive(false);
             current_state = State.NONE;
+            nothing_to_say = false;
         }
     }
 

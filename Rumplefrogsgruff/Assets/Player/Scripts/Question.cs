@@ -46,13 +46,26 @@ public class Question
     public string getResponse(Item item)
     {
         string response = "";
-        Response response_object = null;
-        subject_response.TryGetValue(item, out response_object);
-        if (response_object != null)
+        if (!HasSeenItem(item))
         {
-            response = response_object.text;
+            Response response_object = ResponseContainsItem(item);
+            if (response_object != null)
+            {
+                response = response_object.text;
+            }
+            items_seen.Add(item);
         }
         return response;
+    }
+
+    public bool HasSeenItem(Item item){
+        return items_seen.Contains(item);
+    }
+
+    public Response ResponseContainsItem(Item item){
+        Response response_object;
+        subject_response.TryGetValue(item, out response_object);
+        return response_object;
     }
 
     public void addBlock(int toBlockId)

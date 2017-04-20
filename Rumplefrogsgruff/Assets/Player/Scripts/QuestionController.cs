@@ -29,8 +29,7 @@ public class QuestionController : MonoBehaviour
         Question.Item item = GameObjectToItem(g);
         foreach (Question q in available_questions)
         {	
-            string response = q.getResponse(item);
-            if (response != "")
+            if (q.ResponseContainsItem(item) != null && !q.HasSeenItem(item))
             {
                 question_arr.Add(q);
             }

@@ -49,7 +49,7 @@
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
-                <Text>I really don't. I couldn't see what hapPENed, but I wouldn't remember anyway.</Text>
+                <Text>I really don't. I couldn't see what happened, but I wouldn't remember anyway.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
@@ -247,7 +247,7 @@
         <Responses>
             <Response>
                 <Subject>AXE</Subject>
-                <Text>Take the LOGS away from me, burn them. I can't forget what hapPENed, but I don't need to be reminded of it at every moment.</Text>
+                <Text>Take the LOGS away from me, burn them. I can't forget what happened, but I don't need to be reminded of it at every moment.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
         </Responses>
@@ -257,7 +257,7 @@
     </Question>
     <Question>
         <ID>9</ID>
-        <Text>There, it's done. They won't bother you any more, will you tell me what hapPENed here now?</Text>
+        <Text>There, it's done. They won't bother you any more, will you tell me what happened here now?</Text>
         <Responses>
             <Response>
                 <Subject>AXE</Subject>
