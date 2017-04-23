@@ -5,7 +5,7 @@ using System.Xml;
 
 public static class FileReader
 {
-    public static List<Question> Read()
+    public static List<Question> Read(int day_no)
     {
         List<Question> imported_questions = new List<Question>();
         TextAsset questions = (TextAsset)Resources.Load("questions");
@@ -14,6 +14,10 @@ public static class FileReader
         XmlNodeList dataNodes = xmldoc.SelectNodes("/Questions/Question");
         foreach (XmlNode node in dataNodes)
         {
+            string day_no_string = node.SelectSingleNode("ID").InnerText;
+            if(!day_no_string.StartsWith(day_no.ToString())){
+                continue;
+            }
             int id = int.Parse(node.SelectSingleNode("ID").InnerText);
             string text = node.SelectSingleNode("Text").InnerText;
             XmlNodeList responses = node.SelectNodes("Responses/Response");

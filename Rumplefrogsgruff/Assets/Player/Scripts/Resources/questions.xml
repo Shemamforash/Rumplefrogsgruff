@@ -1,37 +1,12 @@
 <Questions>
     <Question>
-        <ID>0</ID>
-        <Text>What happened here?</Text>
+        <ID>00</ID>
+        <Text>Who's there? Help me please!</Text>
         <Responses>
             <Response>
-                <Subject>KNIFE</Subject>
-                <Text>The man who lived here, he went mad, smashed his chair, and left.</Text>
-                <OpenQuestion>1,2,5</OpenQuestion>
-            </Response>
-            <Response>
-                <Subject>CANDLE</Subject>
-                <Text>I don't remember what he looked like. He was tall. I remember a chair.</Text>
-                <OpenQuestion>1</OpenQuestion>
-            </Response>
-            <Response>
-                <Subject>PEN</Subject>
-                <Text>There was anger, lots of shouting, and the howling and breaking.</Text>
-                <OpenQuestion>2</OpenQuestion>
-            </Response>
-            <Response>
-                <Subject>DESK</Subject>
-                <Text>If only everything had been left as it was, my love wouldn't be in pieces!</Text>
-                <OpenQuestion>3</OpenQuestion>
-            </Response>
-            <Response>
-                <Subject>AXE</Subject>
-                <Text>Can't you leave me alone? I've already suffered enough!</Text>
-                <OpenQuestion>4</OpenQuestion>
-            </Response>
-            <Response>
-                <Subject>LOGS</Subject>
-                <Text>He broke it, can't you see!? He broke it and now he's left us all!</Text>
-                <OpenQuestion>3,5</OpenQuestion>
+                <Subject>RSS</Subject>
+                <Text>There's no need to cry out, it's just me here.</Text>
+                <OpenQuestion>01</OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -39,13 +14,152 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>1</ID>
+        <ID>01</ID>
+        <Text>Who are you?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>That would be telling now, wouldn't it?</Text>
+                <OpenQuestion>02</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>02</ID>
+        <Text>Please don't hurt me, I don't have anything to give you.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>On the contrary, you have something I want dearly.</Text>
+                <OpenQuestion>03</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>03</ID>
+        <Text>I don't understand.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Your child! I want your first-born! Give me a son, and I'll let you go.</Text>
+                <OpenQuestion>04</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>04</ID>
+        <Text>No, please, don't hurt my baby. I'll do anything else!</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>I assure you there is nothing else I want that you could offer... although we could play a game.</Text>
+                <OpenQuestion>05</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>05</ID>
+        <Text>A game? Are you mad? This is my child we are talking about!</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Wait and listen. If you can guess my name within 3 days then you can keep your child, otherwise, well, you know what will happen.</Text>
+                <OpenQuestion>06</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>06</ID>
+        <Text>I... suppose I don't have any choice do I?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>No, you're quite right. But when do you ever?</Text>
+                <OpenQuestion>07</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>07</ID>
+        <Text>Please tell me, why are you doing this?!</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Hush now, I will return this evening. Oh, and do make sure you drink the potion.</Text>
+                <OpenQuestion>08</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+
+
+    <Question>
+        <ID>30</ID>
+        <Text>What happened here?</Text>
+        <Responses>
+            <Response>
+                <Subject>KNIFE</Subject>
+                <Text>The man who lived here, he went mad, smashed his chair, and left.</Text>
+                <OpenQuestion>31,32,35</OpenQuestion>
+            </Response>
+            <Response>
+                <Subject>CANDLE</Subject>
+                <Text>I don't remember what he looked like. He was tall. I remember a chair.</Text>
+                <OpenQuestion>31</OpenQuestion>
+            </Response>
+            <Response>
+                <Subject>PEN</Subject>
+                <Text>There was anger, lots of shouting, and the howling and breaking.</Text>
+                <OpenQuestion>32</OpenQuestion>
+            </Response>
+            <Response>
+                <Subject>DESK</Subject>
+                <Text>If only everything had been left as it was, my love wouldn't be in pieces!</Text>
+                <OpenQuestion>33</OpenQuestion>
+            </Response>
+            <Response>
+                <Subject>AXE</Subject>
+                <Text>Can't you leave me alone? I've already suffered enough!</Text>
+                <OpenQuestion>34</OpenQuestion>
+            </Response>
+            <Response>
+                <Subject>LOGS</Subject>
+                <Text>He broke it, can't you see!? He broke it and now he's left us all!</Text>
+                <OpenQuestion>33,35</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>31</ID>
         <Text>Do you know why he would destroy a chair?</Text>
         <Responses>
             <Response>
                 <Subject>KNIFE</Subject>
                 <Text>I remember it was important to him. I think I made the chair? Was he mad at me?</Text>
-                <OpenQuestion>2</OpenQuestion>
+                <OpenQuestion>32</OpenQuestion>
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
@@ -55,7 +169,7 @@
             <Response>
                 <Subject>PEN</Subject>
                 <Text>Well, the chair was a gift, but it made him sad. Then his sadness turned to rage.</Text>
-                <OpenQuestion>7,2</OpenQuestion>
+                <OpenQuestion>37,32</OpenQuestion>
             </Response>
             <Response>
                 <Subject>DESK</Subject>
@@ -78,7 +192,7 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>2</ID>
+        <ID>32</ID>
         <Text>I don't understand why a chair would anger someone.</Text>
         <Responses>
             <Response>
@@ -89,12 +203,12 @@
             <Response>
                 <Subject>CANDLE</Subject>
                 <Text>I remember seeing two people here. One on the chair. Then it was just one person. Maybe they did something to the chair.</Text>
-                <OpenQuestion>6</OpenQuestion>
+                <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
                 <Subject>PEN</Subject>
                 <Text>It's been quiet for so long... once there was a woman's voice, but it was so gentle it could never have angered him.</Text>
-                <OpenQuestion>6</OpenQuestion>
+                <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
                 <Subject>DESK</Subject>
@@ -104,12 +218,12 @@
             <Response>
                 <Subject>AXE</Subject>
                 <Text>He used to chop wood, but that wasn't with anger. Then he made me break it, and now I have to live with myself.</Text>
-                <OpenQuestion>1</OpenQuestion>
+                <OpenQuestion>31</OpenQuestion>
             </Response>
             <Response>
                 <Subject>LOGS</Subject>
                 <Text>We don't either! But he's gone and he took his chopping and his tears and his woman away.</Text>
-                <OpenQuestion>5,6</OpenQuestion>
+                <OpenQuestion>35,36</OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -117,7 +231,7 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>3</ID>
+        <ID>33</ID>
         <Text>What did he break?</Text>
         <Responses>
             <Response>
@@ -128,7 +242,7 @@
             <Response>
                 <Subject>LOGS</Subject>
                 <Text>The chair, the stupid, ugly chair.</Text>
-                <OpenQuestion>1</OpenQuestion>
+                <OpenQuestion>31</OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -136,13 +250,13 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>4</ID>
+        <ID>34</ID>
         <Text>I'm sorry you are suffering. Please tell me why, perhaps I can do something.</Text>
         <Responses>
             <Response>
                 <Subject>AXE</Subject>
                 <Text>It was special, the chair. He made me break it apart. My friends- they judge me for it. And the LOGS, they love it.</Text>
-                <OpenQuestion>1,8</OpenQuestion>
+                <OpenQuestion>31,38</OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -150,23 +264,23 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>5</ID>
+        <ID>35</ID>
         <Text>Do you know why he left in such a hurry?</Text>
         <Responses>
             <Response>
                 <Subject>KNIFE</Subject>
                 <Text>The woman made him leave. We used to hunt together but she didn't like it.</Text>
-                <OpenQuestion>6</OpenQuestion>
+                <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
                 <Text>It was the woman! I remember seeing her, she came, and then she left, and he followed her.</Text>
-                <OpenQuestion>6</OpenQuestion>
+                <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
                 <Subject>PEN</Subject>
                 <Text>The chair would remember, he had such good memory. But I remember he was inconsolable after she left.</Text>
-                <OpenQuestion>6</OpenQuestion>
+                <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
                 <Subject>DESK</Subject>
@@ -176,7 +290,7 @@
             <Response>
                 <Subject>AXE</Subject>
                 <Text>He wanted a child.</Text>
-                <OpenQuestion>6</OpenQuestion>
+                <OpenQuestion>36</OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -184,13 +298,13 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>6</ID>
+        <ID>36</ID>
         <Text>You keep talking about a woman, who is she?</Text>
         <Responses>
             <Response>
                 <Subject>KNIFE</Subject>
                 <Text>She must have been special to him, the chair we made was for her.</Text>
-                <OpenQuestion>7</OpenQuestion>
+                <OpenQuestion>37</OpenQuestion>
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
@@ -210,7 +324,7 @@
             <Response>
                 <Subject>AXE</Subject>
                 <Text>Please don't make me remember, it's too painful.</Text>
-                <OpenQuestion>8</OpenQuestion>
+                <OpenQuestion>38</OpenQuestion>
             </Response>
         </Responses>
         <BlockedQuestions>
@@ -218,7 +332,7 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>7</ID>
+        <ID>37</ID>
         <Text>If the chair was a gift, what was it for?</Text>
         <Responses>
             <Response>
@@ -242,7 +356,7 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>8</ID>
+        <ID>38</ID>
         <Text>I need to know, please, maybe I can help you- if you'll let me.</Text>
         <Responses>
             <Response>
@@ -256,7 +370,7 @@
         </BlockedQuestions>
     </Question>
     <Question>
-        <ID>9</ID>
+        <ID>39</ID>
         <Text>There, it's done. They won't bother you any more, will you tell me what happened here now?</Text>
         <Responses>
             <Response>

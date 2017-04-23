@@ -9,26 +9,30 @@ public class QuestionController : MonoBehaviour
     private static List<Question> available_questions = new List<Question>();
 
     // Use this for initialization
-    void Start()
+
+    public static void SetQuestions(List<Question> new_questions, int day_no)
     {
-        questions = FileReader.Read();
-        OpenQuestion(0);
+        questions = new_questions;
+        OpenQuestion(int.Parse(day_no + "0"));
     }
 
-	private static void OpenQuestion(int q_no){
-		foreach(Question q in questions){
-			if(q.getId() == q_no && !available_questions.Contains(q)){
-				available_questions.Add(q);
-			}
-		}
-	}
+    private static void OpenQuestion(int q_no)
+    {
+        foreach (Question q in questions)
+        {
+            if (q.getId() == q_no && !available_questions.Contains(q))
+            {
+                available_questions.Add(q);
+            }
+        }
+    }
 
     public static List<Question> GetQuestions(GameObject g)
     {
         List<Question> question_arr = new List<Question>();
         Question.Item item = GameObjectToItem(g);
         foreach (Question q in available_questions)
-        {	
+        {
             if (q.ResponseContainsItem(item) != null && !q.HasSeenItem(item))
             {
                 question_arr.Add(q);
@@ -40,10 +44,11 @@ public class QuestionController : MonoBehaviour
     public static string GetResponse(GameObject g, Question q)
     {
         Question.Item item = GameObjectToItem(g);
-		foreach(int i in q.GetOpens(item)){
-			OpenQuestion(i);
-		}
-		return q.getResponse(item);
+        foreach (int i in q.GetOpens(item))
+        {
+            OpenQuestion(i);
+        }
+        return q.getResponse(item);
     }
 
     private static Question.Item GameObjectToItem(GameObject g)
@@ -62,6 +67,8 @@ public class QuestionController : MonoBehaviour
                 return Question.Item.CANDLE;
             case "Pen":
                 return Question.Item.PEN;
+            case "RSS":
+                return Question.Item.RSS;
             default:
                 return Question.Item.NONE;
         }

@@ -21,6 +21,7 @@ public class CrosshairController : MonoBehaviour
     private List<GameObject> dialogue_options = new List<GameObject>();
     private List<Question> current_questions;
     private float max_distance_to_interact = 50f, fade_time = 3f, current_fade_amount = 0f;
+    private GameObject rumplestiltskin_object;
 
 
     private enum State { ASKING, LISTENING, NONE };
@@ -30,6 +31,8 @@ public class CrosshairController : MonoBehaviour
 
     void Start()
     {
+        rumplestiltskin_object = new GameObject();
+        rumplestiltskin_object.name = "RSS";
         dialogue_background = GameObject.Find("Dialogue Background");
         response_container = GameObject.Find("Response Container");
         fade_background = GameObject.Find("Background Fade").GetComponent<Image>();
@@ -51,8 +54,18 @@ public class CrosshairController : MonoBehaviour
         if (current_questions.Count == 0)
         {
             current_state = State.LISTENING;
-            nothing_to_say = true;
-            EnableResponse(interactible_object.name + " has nothing else to say.");
+            if (interactible_object.name == "RSS")
+            {
+                interactible_object = null;
+                DayManager.change_day();
+                current_fade = Fade.OUT;
+                current_state = State.NONE;
+            }
+            else
+            {
+                nothing_to_say = true;
+                EnableResponse(interactible_object.name + " has nothing else to say.");
+            }
         }
         else
         {
@@ -176,7 +189,16 @@ public class CrosshairController : MonoBehaviour
     {
         if (current_state == State.NONE)
         {
-            RayCastInFront();
+            if (DayManager.is_it_night())
+            {
+                current_state = State.ASKING;
+                current_fade = Fade.IN;
+                interactible_object = rumplestiltskin_object;
+            }
+            else
+            {
+                RayCastInFront();
+            }
         }
         else if (current_state == State.ASKING)
         {
