@@ -25,7 +25,7 @@ public class CrosshairController : MonoBehaviour
 
 
     private enum State { ASKING, LISTENING, NONE };
-    private enum Fade { OUT, IN, NONE };
+    private enum Fade { OUT, IN, NONE , INSTANTIN };
     private State current_state = State.NONE;
     private Fade current_fade = Fade.OUT;
 
@@ -46,7 +46,12 @@ public class CrosshairController : MonoBehaviour
 
     private void GetNewQuestions()
     {
-        speaker_text.GetComponent<Text>().text = interactible_object.name;
+        string speaker_name = interactible_object.name;
+        if(speaker_name == "RSS"){
+            speaker_name = "A Voice in the Darkness";
+        }
+        speaker_text.GetComponent<Text>().text = speaker_name;
+        
         current_questions = QuestionController.GetQuestions(interactible_object);
         response_container.SetActive(false);
         dialogue_background.SetActive(true);
@@ -58,6 +63,7 @@ public class CrosshairController : MonoBehaviour
             {
                 interactible_object = null;
                 DayManager.change_day();
+                dialogue_background.SetActive(false);
                 current_fade = Fade.OUT;
                 current_state = State.NONE;
             }
@@ -166,7 +172,10 @@ public class CrosshairController : MonoBehaviour
 
     private void UpdateFade()
     {
-        if (current_fade != Fade.NONE)
+        if(current_fade == Fade.INSTANTIN){
+            fade_background.color = new Color(0, 0, 0, 1);
+        }
+        else if (current_fade != Fade.NONE)
         {
             current_fade_amount += Time.deltaTime;
             if (fade_time <= current_fade_amount)
@@ -192,7 +201,7 @@ public class CrosshairController : MonoBehaviour
             if (DayManager.is_it_night())
             {
                 current_state = State.ASKING;
-                current_fade = Fade.IN;
+                current_fade = Fade.INSTANTIN;
                 interactible_object = rumplestiltskin_object;
             }
             else
