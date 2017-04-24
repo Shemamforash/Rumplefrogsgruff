@@ -1,4 +1,5 @@
 <Questions>
+    <!-->INTRO//0<-->
     <Question>
         <ID>00</ID>
         <Text>Who's there? Help me please!</Text>
@@ -111,8 +112,79 @@
             <BlockedQuestion></BlockedQuestion>
         </BlockedQuestions>
     </Question>
-
-
+    <!-->DAY1//1<-->
+    <!-->NIGHT 1//2<-->
+    <Question>
+        <ID>20</ID>
+        <Text>Are you there again?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Yes, I am here.</Text>
+                <OpenQuestion>21</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>21</ID>
+        <Text>I drank it like you told me. Is it poison?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Of course not- why would I want to risk harming my child.</Text>
+                <OpenQuestion>22</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>22</ID>
+        <Text>Don’t you dare say that. It’s not yours yet.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>You’re right, it isn’t yet. But you haven’t found anything out have you?</Text>
+                <OpenQuestion>23</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>23</ID>
+        <Text>No. I don’t know. Who is it that lived here? I found letters and doctors notes.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Why should I care? This place was empty when I arrived. I know about the notes, that’s why I wanted you to try the potion.</Text>
+                <OpenQuestion>24</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>24</ID>
+        <Text>Well it hasn’t done anything to me.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>A shame.</Text>
+                <OpenQuestion></OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <!-->DAY 2//3<-->
     <Question>
         <ID>30</ID>
         <Text>What happened here?</Text>
@@ -383,4 +455,91 @@
             </BlockedQuestions>
         </Responses>
     </Question>
+    <!-->NIGHT 2//4<-->
+    <Question>
+        <ID>40</ID>
+        <Text>You know a man lived here? Not that long ago too it seems.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Isn’t that obvious? I don’t see why you are so fixated on who used to live here though.</Text>
+                <OpenQuestion>41</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>41</ID>
+        <Text>I spoke to the furniture, they told me you arrived the same night he left.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>You spoke to the furniture? How curious. Well I’m sorry to disappoint you that I have no recollection of anyone being here.</Text>
+                <OpenQuestion>42</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>42</ID>
+        <Text>Why do you keep everything tidy?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>I'm sorry?</Text>
+                <OpenQuestion>43</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>43</ID>
+        <Text>The room, the furniture, it’s all clean, and ordered, and the fire is constantly lit. Why do you do it?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Why would I want to live in filth? As for the fire, you need to keep warm.</Text>
+                <OpenQuestion>44</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>44</ID>
+        <Text>Why would you want to live here at all?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Hush. I don’t need to answer your questions. This place was empty, it felt like home, so I took it.</Text>
+                <OpenQuestion>45</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>45</ID>
+        <Text>Like home?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Be quiet! You’re ruining my fun. Tomorrow night I shall return, and your child will be mine.</Text>
+                <OpenQuestion></OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <!-->DAY 3//5<-->
+    <!-->NIGHT 3//6<-->
 </Questions>
