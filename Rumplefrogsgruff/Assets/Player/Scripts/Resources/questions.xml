@@ -211,12 +211,12 @@
             </Response>
             <Response>
                 <Subject>AXE</Subject>
-                <Text>Can't you leave me alone? I've already suffered enough!</Text>
+                <Text>Oh just leave me alone. I've already suffered enough!</Text>
                 <OpenQuestion>34</OpenQuestion>
             </Response>
             <Response>
                 <Subject>LOGS</Subject>
-                <Text>He broke it, can't you see!? He broke it and now he's left us all!</Text>
+                <Text>He broke the chair, can't you see!? He broke it and now he's left us all!</Text>
                 <OpenQuestion>33,35</OpenQuestion>
             </Response>
         </Responses>

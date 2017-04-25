@@ -16,7 +16,7 @@ public class CrosshairController : MonoBehaviour
     private bool dialogue_box_open = false, nothing_to_say = false;
     private GameObject interactible_object = null;
     public LayerMask player_mask;
-    private GameObject dialogue_background, speaker_text, response_container;
+    private GameObject dialogue_background, speaker_text, response_container, button_to_press;
     private Image fade_background;
     private List<GameObject> dialogue_options = new List<GameObject>();
     private List<Question> current_questions;
@@ -25,7 +25,7 @@ public class CrosshairController : MonoBehaviour
 
 
     private enum State { ASKING, LISTENING, NONE };
-    private enum Fade { OUT, IN, NONE , INSTANTIN };
+    private enum Fade { OUT, IN, NONE, INSTANTIN };
     private State current_state = State.NONE;
     private Fade current_fade = Fade.OUT;
 
@@ -36,6 +36,7 @@ public class CrosshairController : MonoBehaviour
         dialogue_background = GameObject.Find("Dialogue Background");
         response_container = GameObject.Find("Response Container");
         fade_background = GameObject.Find("Background Fade").GetComponent<Image>();
+        button_to_press = GameObject.Find("Button to Press");
         for (int i = 1; i <= 5; ++i)
         {
             dialogue_options.Add(GameObject.Find("Option " + i));
@@ -47,11 +48,12 @@ public class CrosshairController : MonoBehaviour
     private void GetNewQuestions()
     {
         string speaker_name = interactible_object.name;
-        if(speaker_name == "RSS"){
+        if (speaker_name == "RSS")
+        {
             speaker_name = "A Voice in the Darkness";
         }
         speaker_text.GetComponent<Text>().text = speaker_name;
-        
+
         current_questions = QuestionController.GetQuestions(interactible_object);
         response_container.SetActive(false);
         dialogue_background.SetActive(true);
@@ -64,6 +66,7 @@ public class CrosshairController : MonoBehaviour
                 interactible_object = null;
                 DayManager.change_day();
                 dialogue_background.SetActive(false);
+                dialogue_box_open = false;
                 current_fade = Fade.OUT;
                 current_state = State.NONE;
             }
@@ -97,16 +100,22 @@ public class CrosshairController : MonoBehaviour
         Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, player_mask);
         if (hit.collider != null && hit.collider.gameObject.tag == "NPC")
         {
-            cursorAnimator.SetBool("canIdentifyObject", true);
-            if (Input.GetKeyDown("e"))
+            float distance = Vector3.Distance(hit.collider.transform.position, transform.position);
+            if (distance < max_distance_to_interact)
             {
-                interactible_object = hit.collider.gameObject;
-                current_state = State.ASKING;
+                cursorAnimator.SetBool("canIdentifyObject", true);
+                button_to_press.GetComponent<Text>().text = "(e)";
+                if (Input.GetKeyDown("e"))
+                {
+                    interactible_object = hit.collider.gameObject;
+                    current_state = State.ASKING;
+                }
             }
         }
         else
         {
             cursorAnimator.SetBool("canIdentifyObject", false);
+            button_to_press.GetComponent<Text>().text = "";
             if (Input.GetKeyDown("e"))
             {
                 interactible_object = null;
@@ -160,8 +169,9 @@ public class CrosshairController : MonoBehaviour
 
     private void CloseDialogue(bool close)
     {
-        if (Input.GetKeyDown("q") || close || (interactible_object != null && Vector3.Distance(transform.position, interactible_object.transform.position) > max_distance_to_interact))
+        if (Input.GetKeyDown("q") || close || (interactible_object != null && interactible_object != rumplestiltskin_object && Vector3.Distance(transform.position, interactible_object.transform.position) > max_distance_to_interact))
         {
+
             current_questions = null;
             dialogue_box_open = false;
             dialogue_background.SetActive(false);
@@ -172,7 +182,8 @@ public class CrosshairController : MonoBehaviour
 
     private void UpdateFade()
     {
-        if(current_fade == Fade.INSTANTIN){
+        if (current_fade == Fade.INSTANTIN)
+        {
             fade_background.color = new Color(0, 0, 0, 1);
         }
         else if (current_fade != Fade.NONE)
