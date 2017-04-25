@@ -8,14 +8,19 @@ public class QuestionController : MonoBehaviour
     private static List<Question> questions;
     private static List<Question> available_questions = new List<Question>();
 
-    // Use this for initialization
 
+    /*Set the questions that will be used for today.
+    Receives a list of questions for the current day, and the day number.
+    The first question available to the player is always question 0, so is set to open.
+    */
     public static void SetQuestions(List<Question> new_questions, int day_no)
     {
         questions = new_questions;
         OpenQuestion(int.Parse(day_no + "0"));
     }
 
+    /*Makes a question "open", when the player queries for available questions, the open questions are returned.
+     */
     private static void OpenQuestion(int q_no)
     {
         foreach (Question q in questions)
@@ -27,6 +32,9 @@ public class QuestionController : MonoBehaviour
         }
     }
 
+    /*Returns all open questions that can be asked of the target item (g)
+    Will not return questions if the player has already asked them to the target item.
+     */
     public static List<Question> GetQuestions(GameObject g)
     {
         List<Question> question_arr = new List<Question>();
@@ -41,6 +49,9 @@ public class QuestionController : MonoBehaviour
         return question_arr;
     }
 
+    /*Opens up new questions from the question that was last asked.
+    Returns the objects response to the question.
+     */
     public static string GetResponse(GameObject g, Question q)
     {
         Question.Item item = GameObjectToItem(g);
@@ -51,6 +62,8 @@ public class QuestionController : MonoBehaviour
         return q.getResponse(item);
     }
 
+    /*Converts a gameobject name to the corresponding item enum.
+     */
     private static Question.Item GameObjectToItem(GameObject g)
     {
         switch (g.transform.root.name)
