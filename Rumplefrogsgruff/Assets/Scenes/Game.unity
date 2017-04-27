@@ -8946,7 +8946,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2011853756
+  randomSeed: -1818846142
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -24335,6 +24335,7 @@ MonoBehaviour:
   logs: {fileID: 1229407970}
   candle: {fileID: 0}
   pen: {fileID: 0}
+  chair: {fileID: 0}
 --- !u!114 &1877764190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24370,7 +24371,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1877764183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
   m_Name: 

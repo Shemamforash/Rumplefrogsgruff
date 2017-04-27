@@ -7,10 +7,19 @@ public class QuestionController : MonoBehaviour
     public GameObject knife, axe, desk, logs, candle, pen, chair;
     private static List<Question> questions;
     private static List<Question> available_questions = new List<Question>();
-    private static bool allow_burning = false;
+    private static bool allow_burning = false, logs_burned = false;
 
     public static bool is_burning_allowed(){
         return allow_burning;
+    }
+
+    public static void burn_logs(){
+        logs_burned = true;
+        QuestionController.OpenQuestion("39");
+    }
+
+    public static bool have_logs_burned(){
+        return logs_burned;
     }
 
 

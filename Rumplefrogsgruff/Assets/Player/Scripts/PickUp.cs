@@ -68,15 +68,15 @@ public class PickUp : MonoBehaviour
             burn_time -= Time.deltaTime * 0.33f;
             if (burn_time <= 0)
             {
-                bool logs_exist = false;
+                int logs_remaining = -1;
                 List<GameObject> npcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("NPC"));
                 foreach(GameObject npc in npcs){
                     if(npc.name == "Logs"){
-                        logs_exist = true;
+                        ++logs_remaining;
                     }
                 }
-                if(!logs_exist){
-                    QuestionController.OpenQuestion("39");
+                if(logs_remaining == 0){
+                    QuestionController.burn_logs();
                 }
                 Destroy(gameObject);
             }

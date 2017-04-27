@@ -314,7 +314,7 @@
             </Response>
             <Response>
                 <Subject>LOGS</Subject>
-                <Text>The chair, the stupid, ugly chair.</Text>
+                <Text>The chair, the stupid, ugly chair. He thought he was so special. Now we laugh at him!</Text>
                 <OpenQuestion>31</OpenQuestion>
             </Response>
         </Responses>
@@ -342,12 +342,12 @@
         <Responses>
             <Response>
                 <Subject>KNIFE</Subject>
-                <Text>The woman made him leave. We used to hunt together but she didn't like it.</Text>
+                <Text>That dratted woman made him leave. We used to hunt together but she didn't like it.</Text>
                 <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
-                <Text>It was the woman! I remember seeing her, she came, and then she left, and he followed her.</Text>
+                <Text>It was the woman! I remember seeing her, she came, oh and then she left for a while... has she come back yet?</Text>
                 <OpenQuestion>36</OpenQuestion>
             </Response>
             <Response>
@@ -372,26 +372,26 @@
     </Question>
     <Question>
         <ID>36</ID>
-        <Text>You keep talking about a woman, who is she?</Text>
+        <Text>Everyone keeps talking about a woman who used to live here, who is she?</Text>
         <Responses>
             <Response>
                 <Subject>KNIFE</Subject>
-                <Text>She must have been special to him, the chair we made was for her.</Text>
+                <Text>She must have been very special, that chair we made was for her.</Text>
                 <OpenQuestion>37</OpenQuestion>
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
-                <Text>They were together for a long time. But I've forgotten her face.</Text>
+                <Text>They were together for a long time. Oh it's been such a long time since too, I've even forgotten her face.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
                 <Subject>PEN</Subject>
-                <Text>He was her husband! I remember writing letters to her now, it was when they were courting. She moved here to be with him.</Text>
+                <Text>His wife! I remember writing letters to her now, it was when they were courting, oh and he asked her to live with him.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
                 <Subject>DESK</Subject>
-                <Text>She was good, and kind.</Text>
+                <Text>She was a good woman, kinder than any of us wish to be.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
@@ -406,7 +406,7 @@
     </Question>
     <Question>
         <ID>37</ID>
-        <Text>If the chair was a gift, what was it for?</Text>
+        <Text>If that chair was a gift, what was it celebrating?</Text>
         <Responses>
             <Response>
                 <Subject>KNIFE</Subject>
@@ -415,12 +415,12 @@
             </Response>
             <Response>
                 <Subject>CANDLE</Subject>
-                <Text>I'm not sure, everything is muddled in my mind. I'm so sorry.</Text>
+                <Text>Err I don't know, everything is muddled in my memory. I'm so sorry!</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <Response>
                 <Subject>PEN</Subject>
-                <Text>It was for their wedding. He made it to celebrate her, but it wasn't just for her. It was for a child too.</Text>
+                <Text>It was for their wedding- to commemorate the day, oh but wait it wasn't just for her. It was for a child too.</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
         </Responses>
@@ -430,11 +430,11 @@
     </Question>
     <Question>
         <ID>38</ID>
-        <Text>I need to know, please, maybe I can help you- if you'll let me.</Text>
+        <Text>I really need to know... hey maybe I can help you- if you'll let me.</Text>
         <Responses>
             <Response>
                 <Subject>AXE</Subject>
-                <Text>Take the LOGS away from me, burn them. I can't forget what happened, but I don't need to be reminded of it at every moment.</Text>
+                <Text>Take those logs away from me, I can't stand to listen to them for a moment longer!</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
         </Responses>
@@ -444,11 +444,11 @@
     </Question>
     <Question>
         <ID>39</ID>
-        <Text>There, it's done. They won't bother you any more, will you tell me what happened here now?</Text>
+        <Text>They won't bother you any more, I burned them all on the fire, will you tell me what happened here now?</Text>
         <Responses>
             <Response>
                 <Subject>AXE</Subject>
-                <Text>Yes, the chair was for his wife and child. First he lost her, then he lost his son, it was so terrible. Wait, I can hear him coming, ask him!</Text>
+                <Text>Yes, the chair was for his wife and child. First he lost her and then his son, it was so terrible. Wait, I can hear him coming, ask him!</Text>
                 <OpenQuestion></OpenQuestion>
             </Response>
             <BlockedQuestions>

@@ -80,8 +80,19 @@ public class CrosshairController : MonoBehaviour
             }
             else
             {
-                nothing_to_say = true;
-                EnableResponse(interactible_object.name + " has nothing else to say.");
+                if ((interactible_object.name == "Axe" && QuestionController.have_logs_burned()) || interactible_object.name == "Chair")
+                {
+                    response_container.SetActive(false);
+                    dialogue_background.SetActive(false);
+                    dialogue_box_open = false;
+                    DayManager.change_day();
+                    current_state = State.NONE;
+                }
+                else
+                {
+                    nothing_to_say = true;
+                    EnableResponse(interactible_object.name + " has nothing else to say.");
+                }
             }
         }
         else
