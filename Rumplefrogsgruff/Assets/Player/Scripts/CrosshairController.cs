@@ -239,9 +239,12 @@ public class CrosshairController : MonoBehaviour
         }
     }
 
+
     private void ReadNote()
     {
         Note note = interactible_object.GetComponent<Note>();
+        bool isPotion = note.isPotion;
+        bool isStone = note.isStone;
 
         dialogue_box_open = true;
         response_container.SetActive(true);
@@ -258,14 +261,18 @@ public class CrosshairController : MonoBehaviour
             lo.unlock();
         }
 
-        if (note.isPotion)
-        {
-            current_state = State.DRINKING;
-        }
-
         if (note.shouldDestroy)
         {
             Destroy(interactible_object);
+        }
+
+        if (isPotion)
+        {
+            current_state = State.DRINKING;
+        }
+        else if (isStone)
+        {
+            //OPEN UP STONE QUESTIONS
         }
 
     }

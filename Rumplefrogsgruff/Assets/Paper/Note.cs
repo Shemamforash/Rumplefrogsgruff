@@ -10,6 +10,7 @@ public class Note : MonoBehaviour {
 	public LockedObject unlocks;
 	public bool shouldDestroy = false;
 	public bool isPotion = false;
+	public bool isStone = false;
 
 	public string getTitle(){
 		return title;
