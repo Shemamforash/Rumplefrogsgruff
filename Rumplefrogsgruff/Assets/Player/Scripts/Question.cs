@@ -7,11 +7,10 @@ public class Question
 {
 
     public enum Item { KNIFE, AXE, PEN, DESK, LOGS, CANDLE, RSS, NONE };
-    private string text;
+    private string text, id;
     private Dictionary<Item, Response> subject_response;
     //Can't keep a list of Question objects easily, so just look up on Question ids instead
     private List<int> blocks;
-    private int id;
     private List<Item> items_seen = new List<Item>();
 
     public static Question.Item NameToEnum(string name)
@@ -22,15 +21,15 @@ public class Question
     public class Response
     {
         public string text;
-        public List<int> opens;
-        public Response(string text, List<int> opens)
+        public List<string> opens;
+        public Response(string text, List<string> opens)
         {
             this.text = text;
             this.opens = opens;
         }
     }
 
-    public Question(int id, string text, Dictionary<Item, Response> subject_response, List<int> blocks)
+    public Question(string id, string text, Dictionary<Item, Response> subject_response, List<int> blocks)
     {
         this.subject_response = subject_response;
         this.id = id;
@@ -38,7 +37,7 @@ public class Question
         this.blocks = blocks;
     }
 
-    public List<int> GetOpens(Item item)
+    public List<string> GetOpens(Item item)
     {
         return subject_response[item].opens;
     }
@@ -87,7 +86,7 @@ public class Question
         return blocks.Contains(qid);
     }
 
-    public int getId()
+    public string getId()
     {
         return id;
     }

@@ -16,34 +16,43 @@ public class QuestionController : MonoBehaviour
     public static void SetQuestions(List<Question> new_questions, int day_no)
     {
         questions = new_questions;
+
         List<GameObject> all_objects = new List<GameObject>(UnityEngine.Object.FindObjectsOfType<GameObject>());
-        foreach(GameObject game_object in all_objects){
-            if(game_object.activeInHierarchy){
+        foreach (GameObject game_object in all_objects)
+        {
+            if (game_object.activeInHierarchy)
+            {
                 Renderer rend = game_object.GetComponent<Renderer>();
-                if(rend != null){
-                Material m = rend.material;
-                if(m.shader.name == "Outlined/OutlineShader"){
-                    bool seen = false;
-                    foreach(Question q in questions){
-                        if(q.ResponseContainsItem(game_object) != null){
-                            m.SetFloat("_Outline", 5);
-                            seen = true;
-                            break;
+                if (rend != null)
+                {
+                    Material m = rend.material;
+                    if (m.shader.name == "Outlined/OutlineShader")
+                    {
+                        bool seen = false;
+                        foreach (Question q in questions)
+                        {
+                            if (q.ResponseContainsItem(game_object) != null)
+                            {
+                                m.SetFloat("_Outline", 5);
+                                seen = true;
+                                break;
+                            }
+                        }
+                        if (!seen)
+                        {
+                            m.SetFloat("_Outline", 0);
                         }
                     }
-                    if(!seen){
-                        m.SetFloat("_Outline", 0);
-                    }
-                }
                 }
             }
         }
-        OpenQuestion(int.Parse(day_no + "0"));
+        Debug.Log(day_no + "0");
+        OpenQuestion(day_no + "0");
     }
 
     /*Makes a question "open", when the player queries for available questions, the open questions are returned.
      */
-    private static void OpenQuestion(int q_no)
+    private static void OpenQuestion(string q_no)
     {
         foreach (Question q in questions)
         {
@@ -77,7 +86,7 @@ public class QuestionController : MonoBehaviour
     public static string GetResponse(GameObject g, Question q)
     {
         Question.Item item = GameObjectToItem(g);
-        foreach (int i in q.GetOpens(item))
+        foreach (string i in q.GetOpens(item))
         {
             OpenQuestion(i);
         }

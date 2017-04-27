@@ -29,21 +29,17 @@ public class DayManager : MonoBehaviour
 
     public static void change_day()
     {
-        int day_or_night_no;
         if (!is_night)
         {
             is_night = true;
             ++day;
-			day_or_night_no = night;
         }
         else
         {
             is_night = false;
             ++night;
-            day_or_night_no = day;
         }
-        Debug.Log(day+night + ": day " + day + " : night " + " is night "+ is_night + " " + day_or_night_no);
-        QuestionController.SetQuestions(question_lists[day + night], day_or_night_no);
+        QuestionController.SetQuestions(question_lists[day + night], day + night);
     }
 
     public static bool is_it_night()

@@ -18,7 +18,7 @@ public static class FileReader
             if(!day_no_string.StartsWith(day_no.ToString())){
                 continue;
             }
-            int id = int.Parse(node.SelectSingleNode("ID").InnerText);
+            string id = node.SelectSingleNode("ID").InnerText;
             string text = node.SelectSingleNode("Text").InnerText;
             XmlNodeList responses = node.SelectNodes("Responses/Response");
             Dictionary<Question.Item, Question.Response> response_dictionary = new Dictionary<Question.Item, Question.Response>();
@@ -28,12 +28,12 @@ public static class FileReader
                 Question.Item subject_enum = Question.NameToEnum(subject);
                 string response_text = response_node.SelectSingleNode("Text").InnerText;
                 string[] open_questions = response_node.SelectSingleNode("OpenQuestion").InnerText.Split(',');
-                List<int> open_list = new List<int>();
+                List<string> open_list = new List<string>();
                 foreach (string open_question in open_questions)
                 {
                     try
                     {
-                        open_list.Add(int.Parse(open_question));
+                        open_list.Add(open_question);
                     }
                     catch { }
                 }
