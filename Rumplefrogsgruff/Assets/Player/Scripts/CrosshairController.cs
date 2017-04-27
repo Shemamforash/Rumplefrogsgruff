@@ -184,6 +184,11 @@ public class CrosshairController : MonoBehaviour
                 {
                     cursorAnimator.SetBool("canIdentifyObject", true);
                     button_to_press.GetComponent<Text>().text = "(e)";
+					if (interactableObject.name.Equals ("Logs") && QuestionController.is_burning_allowed ()) {
+						button_to_press.GetComponent<Text> ().text = "(f)";
+					} else {
+						button_to_press.GetComponent<Text>().text = "(e)";
+					}
                     if (Input.GetKeyDown("e"))
                     {
                         interactible_object = interactableObject;
@@ -303,9 +308,6 @@ public class CrosshairController : MonoBehaviour
             }
             else if (isStone)
             {
-                GameObject book = GameObject.Find("Book");
-                book.tag = "NPC";
-
                 GameObject chair = GameObject.Find("Chair");
                 chair.tag = "NPC";
 
@@ -406,7 +408,7 @@ public class CrosshairController : MonoBehaviour
         //Can't see a better way of doing this, feel free to move somewhere else
         if (!stoneActivated)
         {
-            if (DayManager.get_day() == 3)
+            if (DayManager.get_day() == 2)
             {
                 stone.SetActive(true);
                 stoneActivated = true;

@@ -591,7 +591,7 @@
             <Response>
                 <Subject>CHAIR</Subject>
                 <Text>You are quite forgiven my dear! The man who made me is Sir Tim Tit Tot, the esteemed gentleman who built this very cabin we are standing in... ...are you not a friend of his?</Text>
-                <OpenQuestion>55,56</OpenQuestion>
+                <OpenQuestion>55</OpenQuestion>
             </Response>
             <BlockedQuestions>
                 <BlockedQuestion></BlockedQuestion>
@@ -612,33 +612,131 @@
             </BlockedQuestions>
         </Responses>
     </Question>
-    <Question>
-        <ID>56</ID>
-        <Text>What can you tell me about Mr Tom Tit Tot?</Text>
-        <Responses>
-            <Response>
-                <Subject>BOOK</Subject>
-                <Text>He's my keeper! Or at least, he was - before he...changed.</Text>
-                <OpenQuestion>57</OpenQuestion>
-            </Response>
-            <BlockedQuestions>
-                <BlockedQuestion></BlockedQuestion>
-            </BlockedQuestions>
-        </Responses>
-    </Question>
-    <Question>
-        <ID>57</ID>
-        <Text>What do you mean "changed"?</Text>
-        <Responses>
-            <Response>
-                <Subject>BOOK</Subject>
-                <Text>Oh, sorry... I can't - he'll tear more pages out. Please, go away!</Text>
-                <OpenQuestion>57</OpenQuestion>
-            </Response>
-            <BlockedQuestions>
-                <BlockedQuestion></BlockedQuestion>
-            </BlockedQuestions>
-        </Responses>
-    </Question>
     <!-->NIGHT 3//6<-->
+    <Question>
+        <ID>60</ID>
+        <Text>I know you're here. Why won't you show your face?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Be careful what you wish for, hehehe. One look at this face and you'd be pretrified to death!</Text>
+                <OpenQuestion>61</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>61</ID>
+        <Text>Fine, have things your way.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Oh, I intend to. Now, the child...</Text>
+                <OpenQuestion>62</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>62</ID>
+        <Text>No - it isn't going to happen. Kill me if you must, but I won't let it happen.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>How delightfully brave of you! I'm afraid, however, that you don't have much choice in the matter.</Text>
+                <OpenQuestion>63</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>63</ID>
+        <Text>Please, I'm begging you... Tom.</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>...   ...   ...What did you just call me?</Text>
+                <OpenQuestion>64</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>64</ID>
+        <Text>Tom... Tom Tit Tot? That was your name once wasn't it?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>...   ...   ...</Text>
+                <OpenQuestion>65</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>65</ID>
+        <Text>It was! I know it! You were the man that lived here... and... your wife....</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>Don't you dare!</Text>
+                <OpenQuestion>66</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>66</ID>
+        <Text>...she died. In childbirth?</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>...   ...   ...</Text>
+                <OpenQuestion>67</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>67</ID>
+        <Text>Please, try and remember. Remember how it felt when you lost them. I have a family at home waiting for me to come back. They'll all feel that way if you harm me or my child and... (sobbing) if I never got to see the face of my own child, I'd... I don't know what I'd do!</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>...   ...   ...</Text>
+                <OpenQuestion>68</OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
+    <Question>
+        <ID>68</ID>
+        <Text>PLEASE!</Text>
+        <Responses>
+            <Response>
+                <Subject>RSS</Subject>
+                <Text>...   ...okay...   ...go.</Text>
+                <OpenQuestion></OpenQuestion>
+            </Response>
+        </Responses>
+        <BlockedQuestions>
+            <BlockedQuestion></BlockedQuestion>
+        </BlockedQuestions>
+    </Question>
 </Questions>
