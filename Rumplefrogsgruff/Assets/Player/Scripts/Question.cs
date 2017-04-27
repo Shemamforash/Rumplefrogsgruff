@@ -63,9 +63,18 @@ public class Question
     }
 
     public Response ResponseContainsItem(Item item){
-        Response response_object;
+        Response response_object = null;
         subject_response.TryGetValue(item, out response_object);
         return response_object;
+    }
+
+    public Response ResponseContainsItem(GameObject g){
+        Item i = QuestionController.GameObjectToItem(g);
+        if(i == Item.NONE) {
+            return null;
+        } else {
+            return ResponseContainsItem(i);
+        }
     }
 
     public void addBlock(int toBlockId)

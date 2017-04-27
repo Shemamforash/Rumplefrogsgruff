@@ -16,6 +16,29 @@ public class QuestionController : MonoBehaviour
     public static void SetQuestions(List<Question> new_questions, int day_no)
     {
         questions = new_questions;
+        List<GameObject> all_objects = new List<GameObject>(UnityEngine.Object.FindObjectsOfType<GameObject>());
+        foreach(GameObject game_object in all_objects){
+            if(game_object.activeInHierarchy){
+                Renderer rend = game_object.GetComponent<Renderer>();
+                if(rend != null){
+                Material m = rend.material;
+                if(m.shader.name == "Outlined/OutlineShader"){
+                    bool seen = false;
+                    foreach(Question q in questions){
+                        if(q.ResponseContainsItem(game_object) != null){
+                            Debug.Log("banana");
+                            m.SetFloat("_Outline", 5);
+                            seen = true;
+                            break;
+                        }
+                    }
+                    if(!seen){
+                        m.SetFloat("_Outline", 0);
+                    }
+                }
+                }
+            }
+        }
         OpenQuestion(int.Parse(day_no + "0"));
     }
 
@@ -64,9 +87,9 @@ public class QuestionController : MonoBehaviour
 
     /*Converts a gameobject name to the corresponding item enum.
      */
-    private static Question.Item GameObjectToItem(GameObject g)
+    public static Question.Item GameObjectToItem(GameObject g)
     {
-        switch (g.transform.root.name)
+        switch (g.name)
         {
             case "Knife":
                 return Question.Item.KNIFE;
