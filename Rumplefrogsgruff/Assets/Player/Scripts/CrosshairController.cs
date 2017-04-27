@@ -24,7 +24,7 @@ public class CrosshairController : MonoBehaviour
     private GameObject rumplestiltskin_object;
 
 
-    private enum State { ASKING, LISTENING, NONE };
+    private enum State { ASKING, LISTENING, READING, NONE };
     private enum Fade { OUT, IN, NONE, INSTANTIN };
     private State current_state = State.NONE;
     private Fade current_fade = Fade.OUT;
@@ -96,34 +96,72 @@ public class CrosshairController : MonoBehaviour
 
     private void RayCastInFront()
     {
-        RaycastHit hit;
-        Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, player_mask);
-        if (hit.collider != null && hit.collider.gameObject.tag == "NPC")
-        {
-            float distance = Vector3.Distance(hit.collider.transform.position, transform.position);
-            if (distance < max_distance_to_interact)
-            {
-                cursorAnimator.SetBool("canIdentifyObject", true);
-                button_to_press.GetComponent<Text>().text = "(e)";
-                if (Input.GetKeyDown("e"))
-                {
-                    interactible_object = hit.collider.gameObject;
-                    current_state = State.ASKING;
-                }
-            }
-        }
-        else
-        {
-            cursorAnimator.SetBool("canIdentifyObject", false);
-            button_to_press.GetComponent<Text>().text = "";
-            if (Input.GetKeyDown("e"))
-            {
-                interactible_object = null;
-                dialogue_box_open = false;
-                dialogue_background.SetActive(false);
-                current_state = State.NONE;
-            }
-        }
+        RaycastHit[] hits;
+		hits = Physics.RaycastAll(transform.position, transform.forward, Mathf.Infinity, player_mask);
+
+		//If hit(s) detected
+		if (hits.Length > 0) {
+			//Prioritise openable objects
+			GameObject openableObject = null;
+			GameObject interactableObject = null;
+			float contactDistance = float.MaxValue;
+
+			foreach (RaycastHit rh in hits){
+				if (rh.collider.gameObject.tag == "OPENS") {
+					if (openableObject == null) {
+						openableObject = rh.collider.gameObject;
+					}
+				}else if(rh.collider.gameObject.tag == "NPC" || rh.collider.gameObject.tag == "NOTE" ) {
+					print (rh.transform.gameObject.name);
+					if (interactableObject == null) {
+						interactableObject = rh.collider.gameObject;
+						contactDistance = rh.distance;
+					} else { //if another is closer...
+						float newDistance = rh.distance;
+						if (newDistance < contactDistance) {
+							interactableObject = rh.collider.gameObject;
+							contactDistance = newDistance;
+						}
+					}
+				}
+			}
+
+			if (openableObject != null) {
+				float distance = Vector3.Distance (openableObject.transform.position, transform.position);
+				if (distance < max_distance_to_interact) {
+					cursorAnimator.SetBool ("canIdentifyObject", true);
+					button_to_press.GetComponent<Text> ().text = "(f)";
+					if (Input.GetKeyDown ("f")) {
+						Animator ani = openableObject.GetComponent <Animator> ();
+						ani.SetBool ("unlocked", true);
+					}
+				}
+			} else if (interactableObject != null) {
+				float distance = Vector3.Distance (interactableObject.transform.position, transform.position);
+				if (distance < max_distance_to_interact) {
+					cursorAnimator.SetBool ("canIdentifyObject", true);
+					button_to_press.GetComponent<Text> ().text = "(e)";
+					if (Input.GetKeyDown ("e")) {
+						interactible_object = interactableObject;
+						if (interactableObject.tag == "NPC") {
+							current_state = State.ASKING;
+						} else if (interactableObject.tag == "NOTE") {
+							current_state = State.READING;	
+						}
+					}
+				}
+			} else {
+				cursorAnimator.SetBool("canIdentifyObject", false);
+				button_to_press.GetComponent<Text>().text = "";
+				if (Input.GetKeyDown("e"))
+				{
+					interactible_object = null;
+					dialogue_box_open = false;
+					dialogue_background.SetActive(false);
+					current_state = State.NONE;
+				}
+			}
+		}
     }
 
     private void GetQuestionChoice()
@@ -180,6 +218,34 @@ public class CrosshairController : MonoBehaviour
         }
     }
 
+	private void ReadNote()
+	{
+		Note note = interactible_object.GetComponent <Note> ();
+
+		dialogue_box_open = true;
+		response_container.SetActive(true);
+		dialogue_background.SetActive(true);
+
+		GameObject replyText = GameObject.Find ("Reply Text");
+		replyText.GetComponent<Text> ().text = note.getText ();
+
+		speaker_text.GetComponent<Text>().text = note.getTitle ();
+
+		if (note.unlocks != null) {
+			LockedObject lo = note.unlocks.GetComponent <LockedObject> ();
+			lo.unlock();
+		}
+
+		if (note.isPotion) {
+			DayManager.change_day ();
+		}
+
+		if (note.shouldDestroy) {
+			Destroy (interactible_object);
+		}
+
+	}
+
     private void UpdateFade()
     {
         if (current_fade == Fade.INSTANTIN)
@@ -207,45 +273,38 @@ public class CrosshairController : MonoBehaviour
 
     void Update()
     {
-        if (current_state == State.NONE)
-        {
-            if (DayManager.is_it_night())
-            {
-                current_state = State.ASKING;
-                current_fade = Fade.INSTANTIN;
-                interactible_object = rumplestiltskin_object;
-            }
-            else
-            {
-                RayCastInFront();
-            }
-        }
-        else if (current_state == State.ASKING)
-        {
-            if (!dialogue_box_open)
-            {
-                GetNewQuestions();
-            }
-            else
-            {
-                GetQuestionChoice();
-            }
-        }
-        else if (current_state == State.LISTENING)
-        {
-            if (Input.GetKeyDown("1"))
-            {
-                if (nothing_to_say)
-                {
-                    CloseDialogue(true);
-                }
-                else
-                {
-                    current_state = State.ASKING;
-                    GetNewQuestions();
-                }
-            }
-        }
+		if (current_state == State.NONE) {
+			if (DayManager.is_it_night ()) {
+				current_state = State.ASKING;
+				current_fade = Fade.INSTANTIN;
+				interactible_object = rumplestiltskin_object;
+			} else {
+				RayCastInFront ();
+			}
+		} else if (current_state == State.ASKING) {
+			if (!dialogue_box_open) {
+				GetNewQuestions ();
+			} else {
+				GetQuestionChoice ();
+			}
+		} else if (current_state == State.LISTENING) {
+			if (Input.GetKeyDown ("1")) {
+				if (nothing_to_say) {
+					CloseDialogue (true);
+				} else {
+					current_state = State.ASKING;
+					GetNewQuestions ();
+				}
+			}
+		} else if (current_state == State.READING){
+			if (!dialogue_box_open) {
+				ReadNote ();
+			}
+			if (Input.GetKeyDown ("1")) {
+				CloseDialogue (true);
+				current_state = State.NONE;
+			}
+		}
         CloseDialogue(false);
         UpdateFade();
     }

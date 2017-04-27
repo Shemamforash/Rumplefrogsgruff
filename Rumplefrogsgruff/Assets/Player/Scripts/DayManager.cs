@@ -34,13 +34,13 @@ public class DayManager : MonoBehaviour
         {
             is_night = true;
             ++day;
-            day_or_night_no = night;
+			day_or_night_no = day;
         }
         else
         {
             is_night = false;
             ++night;
-            day_or_night_no = day;
+            day_or_night_no = night;
         }
         QuestionController.SetQuestions(question_lists[day + night], day_or_night_no);
     }
