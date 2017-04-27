@@ -34,6 +34,10 @@ public class DayManager : MonoBehaviour
         return day;
     }
 
+    public static int get_night() {
+        return night;
+    }
+
     public static void change_day()
     {
         if (!is_night)

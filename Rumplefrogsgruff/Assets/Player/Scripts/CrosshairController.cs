@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CrosshairController : MonoBehaviour
 {
@@ -71,12 +72,19 @@ public class CrosshairController : MonoBehaviour
             current_state = State.LISTENING;
             if (interactible_object.name == "RSS")
             {
-                interactible_object = null;
-                DayManager.change_day();
-                dialogue_background.SetActive(false);
-                dialogue_box_open = false;
-                current_fade = Fade.OUT;
-                current_state = State.NONE;
+                if (DayManager.get_night() == 3)
+                {
+                    SceneManager.LoadScene("Game Over");
+                }
+                else
+                {
+                    interactible_object = null;
+                    DayManager.change_day();
+                    dialogue_background.SetActive(false);
+                    dialogue_box_open = false;
+                    current_fade = Fade.OUT;
+                    current_state = State.NONE;
+                }
             }
             else
             {
