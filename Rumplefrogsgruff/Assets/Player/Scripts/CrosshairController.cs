@@ -112,7 +112,6 @@ public class CrosshairController : MonoBehaviour
 						openableObject = rh.collider.gameObject;
 					}
 				}else if(rh.collider.gameObject.tag == "NPC" || rh.collider.gameObject.tag == "NOTE" ) {
-					print (rh.transform.gameObject.name);
 					if (interactableObject == null) {
 						interactableObject = rh.collider.gameObject;
 						contactDistance = rh.distance;

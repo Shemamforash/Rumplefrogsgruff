@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DayManager : MonoBehaviour
 {
     private static bool is_night = true;
-    private static int day = 1, night = 0;
+    private static int day = 0, night = 0;
     private List<Question> intro, day_one, night_one, day_two, night_two, day_three, night_three;
     private static List<List<Question>> question_lists = new List<List<Question>>();
     private static bool loaded = false;
@@ -34,14 +34,15 @@ public class DayManager : MonoBehaviour
         {
             is_night = true;
             ++day;
-			day_or_night_no = day;
+			day_or_night_no = night;
         }
         else
         {
             is_night = false;
             ++night;
-            day_or_night_no = night;
+            day_or_night_no = day;
         }
+        Debug.Log(day+night + ": day " + day + " : night " + " is night "+ is_night + " " + day_or_night_no);
         QuestionController.SetQuestions(question_lists[day + night], day_or_night_no);
     }
 

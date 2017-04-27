@@ -26,7 +26,6 @@ public class QuestionController : MonoBehaviour
                     bool seen = false;
                     foreach(Question q in questions){
                         if(q.ResponseContainsItem(game_object) != null){
-                            Debug.Log("banana");
                             m.SetFloat("_Outline", 5);
                             seen = true;
                             break;
