@@ -7,6 +7,11 @@ public class QuestionController : MonoBehaviour
     public GameObject knife, axe, desk, logs, candle, pen;
     private static List<Question> questions;
     private static List<Question> available_questions = new List<Question>();
+    private static bool allow_burning = false;
+
+    public static bool is_burning_allowed(){
+        return allow_burning;
+    }
 
 
     /*Set the questions that will be used for today.
@@ -33,7 +38,11 @@ public class QuestionController : MonoBehaviour
                         {
                             if (q.ResponseContainsItem(game_object) != null)
                             {
-                                m.SetFloat("_Outline", 5);
+                                if(game_object.name == "Pen" || game_object.name == "Candle"){
+                                    m.SetFloat("_Outline", 0.7f);
+                                } else {
+                                    m.SetFloat("_Outline", 5);
+                                }
                                 seen = true;
                                 break;
                             }
@@ -52,7 +61,7 @@ public class QuestionController : MonoBehaviour
 
     /*Makes a question "open", when the player queries for available questions, the open questions are returned.
      */
-    private static void OpenQuestion(string q_no)
+    public static void OpenQuestion(string q_no)
     {
         foreach (Question q in questions)
         {
@@ -86,6 +95,10 @@ public class QuestionController : MonoBehaviour
     public static string GetResponse(GameObject g, Question q)
     {
         Question.Item item = GameObjectToItem(g);
+        if (q.getId() == "38")
+        {
+            allow_burning = true;
+        }
         foreach (string i in q.GetOpens(item))
         {
             OpenQuestion(i);

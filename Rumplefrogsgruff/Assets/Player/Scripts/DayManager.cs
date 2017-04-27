@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 public class DayManager : MonoBehaviour
 {
     private static bool is_night = true;
-<<<<<<< Updated upstream
     private static int day = 0, night = 0;
-=======
-    private static int day = 3, night = 3;
->>>>>>> Stashed changes
     private List<Question> intro, day_one, night_one, day_two, night_two, day_three, night_three;
     private static List<List<Question>> question_lists = new List<List<Question>>();
     private static bool loaded = false;
@@ -26,10 +22,14 @@ public class DayManager : MonoBehaviour
             question_lists.Add(night_two = FileReader.Read(4));
             question_lists.Add(day_three = FileReader.Read(5));
             question_lists.Add(night_three = FileReader.Read(6));
-            //QuestionController.SetQuestions(intro, night);
-			QuestionController.SetQuestions(day_three, day);
+            QuestionController.SetQuestions(intro, night);
+			// QuestionController.SetQuestions(day_two, 2);
             loaded = true;
         }
+    }
+
+    public static int get_day(){
+        return day;
     }
 
     public static void change_day()

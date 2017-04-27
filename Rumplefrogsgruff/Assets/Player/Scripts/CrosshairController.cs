@@ -13,7 +13,7 @@ public class CrosshairController : MonoBehaviour
      */
 
     public Animator cursorAnimator;
-    private bool dialogue_box_open = false, nothing_to_say = false;
+    private bool dialogue_box_open = false, nothing_to_say = false, chest_open = false;
     private GameObject interactible_object = null;
     public LayerMask player_mask;
     private GameObject dialogue_background, speaker_text, response_container, button_to_press;
@@ -23,8 +23,8 @@ public class CrosshairController : MonoBehaviour
     private float max_distance_to_interact = 50f, fade_time = 3f, current_fade_amount = 0f;
     private GameObject rumplestiltskin_object;
 
-	private bool stoneActivated = false;
-	public GameObject stone;
+    private bool stoneActivated = false;
+    public GameObject stone;
 
     private enum State { ASKING, LISTENING, READING, NONE, DRINKING };
     private enum Fade { OUT, IN, NONE, INSTANTIN };
@@ -147,6 +147,7 @@ public class CrosshairController : MonoBehaviour
                     {
                         Animator ani = openableObject.GetComponent<Animator>();
                         ani.SetBool("unlocked", true);
+                        chest_open = true;
                     }
                 }
             }
@@ -248,35 +249,37 @@ public class CrosshairController : MonoBehaviour
         bool isPotion = note.isPotion;
         bool isStone = note.isStone;
 
-        dialogue_box_open = true;
-        response_container.SetActive(true);
-        dialogue_background.SetActive(true);
-
-        GameObject replyText = GameObject.Find("Reply Text");
-        replyText.GetComponent<Text>().text = note.getText();
-
-        speaker_text.GetComponent<Text>().text = note.getTitle();
-
-        if (note.unlocks != null)
+        if ((isPotion && chest_open) || !isPotion)
         {
-            LockedObject lo = note.unlocks.GetComponent<LockedObject>();
-            lo.unlock();
-        }
+            dialogue_box_open = true;
+            response_container.SetActive(true);
+            dialogue_background.SetActive(true);
 
-        if (note.shouldDestroy)
-        {
-            Destroy(interactible_object);
-        }
+            GameObject replyText = GameObject.Find("Reply Text");
+            replyText.GetComponent<Text>().text = note.getText();
 
-        if (isPotion)
-        {
-            current_state = State.DRINKING;
-        }
-        else if (isStone)
-        {
-            //OPEN UP STONE QUESTIONS
-        }
+            speaker_text.GetComponent<Text>().text = note.getTitle();
 
+            if (note.unlocks != null)
+            {
+                LockedObject lo = note.unlocks.GetComponent<LockedObject>();
+                lo.unlock();
+            }
+
+            if (note.shouldDestroy)
+            {
+                Destroy(interactible_object);
+            }
+
+            if (isPotion)
+            {
+                current_state = State.DRINKING;
+            }
+            else if (isStone)
+            {
+                //OPEN UP STONE QUESTIONS
+            }
+        }
     }
 
     private void UpdateFade()
@@ -368,12 +371,14 @@ public class CrosshairController : MonoBehaviour
         CloseDialogue(false);
         UpdateFade();
 
-		//Can't see a better way of doing this, feel free to move somewhere else
-		if (!stoneActivated) {
-			if (DayManager.get_day () == 3) {
-				stone.SetActive (true);
-				stoneActivated = true;
-			}
-		}
+        //Can't see a better way of doing this, feel free to move somewhere else
+        if (!stoneActivated)
+        {
+            if (DayManager.get_day() == 3)
+            {
+                stone.SetActive(true);
+                stoneActivated = true;
+            }
+        }
     }
 }
