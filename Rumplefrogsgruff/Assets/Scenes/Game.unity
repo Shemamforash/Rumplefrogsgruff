@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.564
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4217262, g: 0.60360754, b: 0.6005849, a: 0.564}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.564}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8946,7 +8946,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1818846142
+  randomSeed: -222638439
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14282,7 +14282,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2068894164
+  randomSeed: 902873386
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18046,7 +18046,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
