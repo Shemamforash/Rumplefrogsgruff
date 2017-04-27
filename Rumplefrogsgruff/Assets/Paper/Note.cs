@@ -18,5 +18,9 @@ public class Note : MonoBehaviour {
 
 	public string getText(){
 		return text;
+
+		if (isStone) {
+
+		}
 	}
 }

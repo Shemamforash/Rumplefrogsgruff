@@ -23,6 +23,8 @@ public class CrosshairController : MonoBehaviour
     private float max_distance_to_interact = 50f, fade_time = 3f, current_fade_amount = 0f;
     private GameObject rumplestiltskin_object;
 
+	private bool stoneActivated = false;
+	public GameObject stone;
 
     private enum State { ASKING, LISTENING, READING, NONE, DRINKING };
     private enum Fade { OUT, IN, NONE, INSTANTIN };
@@ -365,5 +367,13 @@ public class CrosshairController : MonoBehaviour
         }
         CloseDialogue(false);
         UpdateFade();
+
+		//Can't see a better way of doing this, feel free to move somewhere else
+		if (!stoneActivated) {
+			if (DayManager.get_day () == 3) {
+				stone.SetActive (true);
+				stoneActivated = true;
+			}
+		}
     }
 }
