@@ -6,7 +6,7 @@ using System;
 public class Question
 {
 
-    public enum Item { KNIFE, AXE, PEN, DESK, LOGS, CANDLE, RSS, NONE };
+    public enum Item { KNIFE, AXE, PEN, DESK, LOGS, CANDLE, RSS, CHAIR, BOOK, NONE };
     private string text, id;
     private Dictionary<Item, Response> subject_response;
     //Can't keep a list of Question objects easily, so just look up on Question ids instead

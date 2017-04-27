@@ -18026,7 +18026,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
       propertyPath: m_LocalScale.y
@@ -18034,7 +18034,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
       propertyPath: m_TagString
@@ -18043,6 +18043,10 @@ Prefab:
     - target: {fileID: 100000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 456279847bca44a089690d7cc43b9d4f, type: 3}
@@ -18066,9 +18070,21 @@ MonoBehaviour:
   title: You Pick Up the Strange Stone
   text: It feels warm to the touch and seems to be quietly humming
   unlocks: {fileID: 0}
-  shouldDestroy: 0
+  shouldDestroy: 1
   isPotion: 0
-  isStone: 0
+  isStone: 1
+--- !u!65 &1201859747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201859745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021160703, y: 0.021293681, z: 0.021257684}
+  m_Center: {x: 0.00032436103, y: 0.00013110228, z: -0.00023958924}
 --- !u!1001 &1203735457
 Prefab:
   m_ObjectHideFlags: 0
@@ -24250,7 +24266,7 @@ MonoBehaviour:
   player_mask:
     serializedVersion: 2
     m_Bits: 4294967291
-  stone: {fileID: 0}
+  stone: {fileID: 1201859745}
 --- !u!124 &1877764186
 Behaviour:
   m_ObjectHideFlags: 0

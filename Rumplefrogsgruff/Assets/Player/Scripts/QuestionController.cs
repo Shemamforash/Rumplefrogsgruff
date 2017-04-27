@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestionController : MonoBehaviour
 {
-    public GameObject knife, axe, desk, logs, candle, pen;
+    public GameObject knife, axe, desk, logs, candle, pen, chair;
     private static List<Question> questions;
     private static List<Question> available_questions = new List<Question>();
     private static bool allow_burning = false;
@@ -106,6 +106,15 @@ public class QuestionController : MonoBehaviour
         return q.getResponse(item);
     }
 
+	public static void openStoneQuestions(){
+		OpenQuestion ("51");
+		foreach (Question q in questions){
+			if (q.getId () == "51") {
+				print (q.getText ());
+			}
+		}
+	}
+
     /*Converts a gameobject name to the corresponding item enum.
      */
     public static Question.Item GameObjectToItem(GameObject g)
@@ -124,8 +133,12 @@ public class QuestionController : MonoBehaviour
                 return Question.Item.CANDLE;
             case "Pen":
                 return Question.Item.PEN;
-            case "RSS":
-                return Question.Item.RSS;
+			case "RSS":
+				return Question.Item.RSS;
+			case "Chair":
+				return Question.Item.CHAIR;
+			case "Book":
+				return Question.Item.BOOK;
             default:
                 return Question.Item.NONE;
         }

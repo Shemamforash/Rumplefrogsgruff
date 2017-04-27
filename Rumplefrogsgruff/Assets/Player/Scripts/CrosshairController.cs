@@ -45,6 +45,13 @@ public class CrosshairController : MonoBehaviour
         }
         speaker_text = GameObject.Find("Speaker");
         dialogue_background.SetActive(false);
+
+
+        //TODO: remove
+        for (int i = 0; i < dialogue_options.Count; ++i)
+        {
+            dialogue_options[i].SetActive(false);
+        }
     }
 
     private void GetNewQuestions()
@@ -277,7 +284,13 @@ public class CrosshairController : MonoBehaviour
             }
             else if (isStone)
             {
-                //OPEN UP STONE QUESTIONS
+                GameObject book = GameObject.Find("Book");
+                book.tag = "NPC";
+
+                GameObject chair = GameObject.Find("Chair");
+                chair.tag = "NPC";
+
+                QuestionController.openStoneQuestions();
             }
         }
     }

@@ -113,7 +113,7 @@
         </BlockedQuestions>
     </Question>
     <!-->DAY1//1<-->
-    
+
     <!-->NIGHT 1//2<-->
     <Question>
         <ID>20</ID>
@@ -542,5 +542,103 @@
         </BlockedQuestions>
     </Question>
     <!-->DAY 3//5<-->
+    <Question>
+        <ID>51</ID>
+        <Text>How did this happen to you?</Text>
+        <Responses>
+            <Response>
+                <Subject>CHAIR</Subject>
+                <Text>How did WHAT happen to me?</Text>
+                <OpenQuestion>52</OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
+    <Question>
+        <ID>52</ID>
+        <Text>How did you get broken? Who destroyed you with the axe?</Text>
+        <Responses>
+            <Response>
+                <Subject>CHAIR</Subject>
+                <Text>You must be mad, I'm in perfect working order. I'm practically brand new! My dear axe friend would never do such a thing.</Text>
+                <OpenQuestion>53</OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
+    <Question>
+        <ID>53</ID>
+        <Text>You're the mad one! I can see you with my own two eyes, you're in pieces.</Text>
+        <Responses>
+            <Response>
+                <Subject>CHAIR</Subject>
+                <Text>I've had quite enough of this, the man who made me did a fine job and here you are insulting him! I'd ask you to watch your tounge my dear girl.</Text>
+                <OpenQuestion>54</OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
+    <Question>
+        <ID>54</ID>
+        <Text>Oh... sorry, my mistake. Who was the man that made you?</Text>
+        <Responses>
+            <Response>
+                <Subject>CHAIR</Subject>
+                <Text>You are quite forgiven my dear! The man who made me is Sir Tim Tit Tot, the esteemed gentleman who built this very cabin we are standing in... ...are you not a friend of his?</Text>
+                <OpenQuestion>55,56</OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
+    <Question>
+        <ID>55</ID>
+        <Text>No, I'm afraid I have never met him. In fact, I have absolutely no idea why I'm even here! Some strange creature captured me and I woke up here, locked in!</Text>
+        <Responses>
+            <Response>
+                <Subject>CHAIR</Subject>
+                <Text>I see...  (mumbling) the girl is really quite mad... must stop this dreaded conversation, it's simply not proper.</Text>
+                <OpenQuestion></OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
+    <Question>
+        <ID>56</ID>
+        <Text>What can you tell me about Mr Tom Tit Tot?</Text>
+        <Responses>
+            <Response>
+                <Subject>BOOK</Subject>
+                <Text>He's my keeper! Or at least, he was - before he...changed.</Text>
+                <OpenQuestion>57</OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
+    <Question>
+        <ID>57</ID>
+        <Text>What do you mean "changed"?</Text>
+        <Responses>
+            <Response>
+                <Subject>BOOK</Subject>
+                <Text>Oh, sorry... I can't - he'll tear more pages out. Please, go away!</Text>
+                <OpenQuestion>57</OpenQuestion>
+            </Response>
+            <BlockedQuestions>
+                <BlockedQuestion></BlockedQuestion>
+            </BlockedQuestions>
+        </Responses>
+    </Question>
     <!-->NIGHT 3//6<-->
 </Questions>
