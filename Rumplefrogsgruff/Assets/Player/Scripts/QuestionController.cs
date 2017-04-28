@@ -48,9 +48,9 @@ public class QuestionController : MonoBehaviour
                             if (q.ResponseContainsItem(game_object) != null)
                             {
                                 if(game_object.name == "Pen" || game_object.name == "Candle"){
-                                    m.SetFloat("_Outline", 0.7f);
+                                    m.SetFloat("_Outline", 0.014f);
                                 } else {
-                                    m.SetFloat("_Outline", 5);
+                                    m.SetFloat("_Outline", 0.1f);
                                 }
                                 seen = true;
                                 break;
